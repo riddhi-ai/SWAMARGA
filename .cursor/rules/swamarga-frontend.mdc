@@ -1,0 +1,32 @@
+---
+description: SWAMARGA frontend design, accessibility, animation, API, and teammate-backend rules
+alwaysApply: true
+---
+
+# SWAMARGA frontend
+
+Bhavya owns the frontend. Do not rewrite, restructure, delete, or modify backend code unless the user explicitly approves that specific change.
+
+Before every change, show ACTION / FILES / WHAT WILL CHANGE / WHY / EXPECTED RESULT / RISKS, then wait for Yes. Never bundle unrelated changes. Never commit or push without explicit approval.
+
+## Visual language
+
+Public-sector digital service + workforce platform. Not a vibe-coded AI startup, SaaS template, Dribbble page, shadcn/v0 look, crypto dashboard, or portfolio piece. Prefer credible/useful over visually impressive.
+
+Palette: charcoal `#202124`, orange `#F36C21`, green `#3E9B45`, background `#F7F8F5`, white `#FFFFFF`, muted `#667085`, border `#E5E7EB`. Orange/green are accents, not background washes. No purple-to-blue gradients, glassmorphism, neon, glowing borders, Inter/Space Grotesk fashion pairings, emoji in nav/headings, giant gradient heroes, 8 identical stat cards, fake partners/stats/testimonials/AI scores, or “unlock / revolutionize / AI-powered” copy.
+
+Typography: Noto Sans + Noto Sans Devanagari (or equivalent Unicode-safe sans). Never hardcode user-facing strings; use i18n (`en` / `mr` / `hi`) and persist language. Set `document.documentElement.lang`.
+
+## Animation
+
+Do not install animation libraries unless the user approves. Use CSS transitions/animations and React state. Motion is allowed when it communicates state, hierarchy, or workflow. Honour `prefers-reduced-motion`. Never: scroll-triggered reveals, parallax, cursor-following, animated gradients, bouncing/floating decoration, or dramatic hover scale/glow. Government dashboards: almost no motion.
+
+## Accessibility (WCAG 2.2 AA)
+
+Semantic HTML, skip link, visible focus, keyboard-only flows, no colour-only status (especially Skill Gap vs Evidence Gap). Labels on every control; errors name the field and how to fix it. Charts need titles plus a text/table summary; hover is not the only way to read data. If design conflicts with accessibility, choose accessibility.
+
+## API
+
+Centralize HTTP in Axios via `VITE_API_BASE_URL`. Never hardcode API hosts. Use live FastAPI where it exists; otherwise mock/prototype services and label provenance (live / seeded / prototype / illustrative). Do not invent backend endpoints. Do not present prototype numbers as official Maharashtra statistics.
+
+Live today: `/health`, `/jobs`, `/candidates` (create, list, skill-gap, evidence-gap, evidence), `/roles/{role}/skill-profile`. Experience Bridge in `app/routers/experience.py` is not mounted and does not match current models — mock it until teammates align it.
