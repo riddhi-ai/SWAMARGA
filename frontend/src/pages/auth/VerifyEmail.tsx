@@ -4,64 +4,46 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function VerifyEmail() {
   const navigate = useNavigate()
-  const [verified, setVerified] = useState(false)
+  const [code, setCode] = useState('')
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setVerified(true)
+    navigate('/candidate')
   }
 
   return (
-    <section className="auth-page">
-      <div className="auth-intro">
-        <p className="eyebrow">Email verification</p>
-        <h1>Verify your email address</h1>
-        <p>
-          Enter the verification code sent to your email address to continue.
+    <div className="auth-container">
+      <div className="auth-panel">
+        <p className="auth-section-label">Account verification</p>
+        <h1>Verify your email</h1>
+        <p className="auth-intro">
+          Enter the verification code sent to your email address.
         </p>
-      </div>
 
-      {verified ? (
-        <div className="verification-success" role="status">
-          <strong>Email verified.</strong>
-          <p>Your prototype account is ready to continue.</p>
-          <button
-            type="button"
-            className="button button-primary button-full"
-            onClick={() => navigate('/candidate')}
-          >
-            Continue
-          </button>
-        </div>
-      ) : (
-        <form className="auth-form" onSubmit={handleSubmit}>
-          <div className="form-field">
-            <label htmlFor="verification-code">
-              Verification code
-            </label>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div className="gov-form-field">
+            <label htmlFor="verification-code">Verification code</label>
             <input
               id="verification-code"
-              name="code"
               inputMode="numeric"
-              autoComplete="one-time-code"
-              maxLength={6}
+              value={code}
+              onChange={(event) => setCode(event.target.value)}
               required
             />
           </div>
 
-          <button type="submit" className="button button-primary button-full">
+          <button type="submit" className="gov-primary-button auth-submit">
             Verify email
           </button>
-
-          <button type="button" className="plain-button">
-            Resend code
-          </button>
         </form>
-      )}
 
-      <Link to="/login" className="auth-secondary-link">
-        Return to sign in
-      </Link>
-    </section>
+        <p className="auth-secondary">
+          Need to start again? <Link to="/signup">Return to registration</Link>
+        </p>
+      </div>
+    </div>
   )
 }
+
+
+

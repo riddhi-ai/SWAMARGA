@@ -1,195 +1,195 @@
-﻿import { Link } from 'react-router-dom'
-import {
-  ArrowRight,
-  BarChart3,
-  BriefcaseBusiness,
-  GraduationCap,
-  Landmark,
-  Route,
-  ShieldCheck,
-} from 'lucide-react'
+import { Link } from 'react-router-dom'
 
-const roles = [
+const services = [
   {
-    icon: GraduationCap,
-    title: 'Candidates',
-    text: 'Understand skill and evidence gaps, build practical experience and explore relevant opportunities.',
+    title: 'Market Demand',
+    text: 'View demand signals by sector, role, skill and location.',
+    link: 'Explore market demand',
   },
   {
-    icon: BriefcaseBusiness,
-    title: 'Employers',
-    text: 'Define workplace competencies, review evidence and provide structured validation.',
+    title: 'Skill & Evidence Gap',
+    text: 'Identify skills that need development and competencies that need practical proof.',
+    link: 'Assess skill and evidence gaps',
   },
   {
-    icon: Landmark,
-    title: 'Government',
-    text: 'Translate labour-market signals into district-level training and capacity decisions.',
+    title: 'Experience Bridge',
+    text: 'Use role-specific practical tasks to build demonstrable experience.',
+    link: 'Explore Experience Bridge',
   },
   {
-    icon: GraduationCap,
-    title: 'Training institutes',
-    text: 'Identify curriculum, trainer, equipment and capacity actions from industry demand.',
+    title: 'Training & Curriculum',
+    text: 'Connect industry requirements with courses, curriculum and training needs.',
+    link: 'View training services',
   },
-]
-
-const capabilities = [
-  'Labour-market intelligence',
-  'Skill & evidence gap analysis',
-  'Experience Bridge',
-  'Curriculum alignment',
-  'Training capacity planning',
-  'Employer validation',
+  {
+    title: 'Competency Passport',
+    text: 'Maintain evidence of demonstrated and employer-validated competencies.',
+    link: 'View competency services',
+  },
+  {
+    title: 'Workforce Planning',
+    text: 'Support district and institutional planning for skills, trainers and capacity.',
+    link: 'View planning services',
+  },
 ]
 
 export default function Home() {
   return (
-    <div className="home-page">
-      <section className="home-hero">
-        <div className="home-hero-copy">
-          <p className="eyebrow">Skill &amp; workforce alignment</p>
+    <>
+      <section className="gov-page-heading">
+        <div className="gov-container">
+          <p className="gov-breadcrumb">Home</p>
+          <h1>Skill &amp; Workforce Alignment</h1>
+          <p>
+            From Industry Demand to Job-Ready Talent
+          </p>
+        </div>
+      </section>
 
-          <h1>
-            From industry demand
-            <br />
-            to job-ready talent.
-          </h1>
-
-          <p className="hero-description">
-            SWAMARGA connects labour-market demand, training systems and
-            candidate capabilities to support better skills and employment
-            decisions.
+      <section className="gov-container gov-intro">
+        <div className="gov-intro-main">
+          <h2>SWAMARGA</h2>
+          <p className="gov-lead">
+            A digital platform for aligning workforce development with
+            changing industry and labour-market requirements.
+          </p>
+          <p>
+            SWAMARGA brings together labour-market signals, skill
+            requirements, practical evidence, training information and
+            workforce planning in one service environment.
           </p>
 
-          <div className="hero-actions">
-            <Link to="/signup" className="button button-primary">
-              Create an account
-              <ArrowRight size={18} aria-hidden="true" />
+          <div className="gov-action-row">
+            <Link to="/signup" className="gov-primary-button">
+              Access services
             </Link>
-
-            <Link to="/about" className="button button-secondary">
-              Understand the platform
+            <Link to="/about" className="gov-secondary-button">
+              About the platform
             </Link>
           </div>
         </div>
 
-        <div className="home-hero-aside" aria-label="Platform pathway">
-          <p className="aside-label">The alignment pathway</p>
+        <aside className="gov-notice-box" aria-labelledby="notice-heading">
+          <h2 id="notice-heading">Important information</h2>
+          <ul>
+            <li>Prototype platform for SIH 2026, PS 26134.</li>
+            <li>Demonstration data is labelled where applicable.</li>
+            <li>Platform outputs are intended to support decision-making.</li>
+          </ul>
+        </aside>
+      </section>
 
-          <ol className="pathway-list">
-            <li>
-              <span>01</span>
-              <strong>Industry demand</strong>
-              <small>What employers require</small>
-            </li>
-            <li>
-              <span>02</span>
-              <strong>Skill analysis</strong>
-              <small>Where requirements and capability differ</small>
-            </li>
-            <li>
-              <span>03</span>
-              <strong>Training action</strong>
-              <small>What should change or be added</small>
-            </li>
-            <li>
-              <span>04</span>
-              <strong>Practical capability</strong>
-              <small>What a candidate can demonstrate</small>
-            </li>
-            <li>
-              <span>05</span>
-              <strong>Employment outcomes</strong>
-              <small>What happens after training</small>
-            </li>
+      <section id="services" className="gov-section gov-section-border">
+        <div className="gov-container">
+          <div className="gov-section-heading">
+            <p className="gov-section-label">Services</p>
+            <h2>Workforce development services</h2>
+            <p>
+              Services are organised around the needs of candidates,
+              training institutions, employers and government authorities.
+            </p>
+          </div>
+
+          <div className="gov-service-list">
+            {services.map((service) => (
+              <article className="gov-service-item" key={service.title}>
+                <h3>{service.title}</h3>
+                <p>{service.text}</p>
+                <Link to="/signup">{service.link}</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="stakeholders" className="gov-section">
+        <div className="gov-container">
+          <div className="gov-section-heading">
+            <p className="gov-section-label">Stakeholders</p>
+            <h2>Access services by role</h2>
+          </div>
+
+          <div className="gov-stakeholder-grid">
+            <article>
+              <h3>Candidate</h3>
+              <p>
+                Understand market demand, identify skill and evidence gaps,
+                build practical experience and track competencies.
+              </p>
+              <Link to="/signup">Candidate services</Link>
+            </article>
+
+            <article>
+              <h3>Training Institute</h3>
+              <p>
+                Review industry demand, course health, curriculum needs,
+                trainer requirements and capacity.
+              </p>
+              <Link to="/signup">Institute services</Link>
+            </article>
+
+            <article>
+              <h3>Employer</h3>
+              <p>
+                Define competency requirements, review evidence and provide
+                employer validation and outcome feedback.
+              </p>
+              <Link to="/signup">Employer services</Link>
+            </article>
+
+            <article>
+              <h3>Government / District Authority</h3>
+              <p>
+                Examine district-level demand and support workforce,
+                training and capacity planning.
+              </p>
+              <Link to="/login">Government services</Link>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="gov-section gov-section-border">
+        <div className="gov-container">
+          <div className="gov-section-heading">
+            <p className="gov-section-label">How it works</p>
+            <h2>From demand to action</h2>
+          </div>
+
+          <ol className="gov-process">
+            <li><span>01</span><strong>Industry demand</strong></li>
+            <li><span>02</span><strong>Gap analysis</strong></li>
+            <li><span>03</span><strong>Practical experience</strong></li>
+            <li><span>04</span><strong>Verified competencies</strong></li>
+            <li><span>05</span><strong>Training &amp; capacity action</strong></li>
+            <li><span>06</span><strong>Placement &amp; feedback</strong></li>
           </ol>
         </div>
       </section>
 
-      <section className="home-section home-section-bordered">
-        <div className="section-lead">
-          <p className="eyebrow">One platform, different workspaces</p>
-          <h2>Each stakeholder sees the decisions relevant to them.</h2>
-        </div>
-
-        <div className="role-grid">
-          {roles.map(({ icon: Icon, title, text }) => (
-            <article className="role-item" key={title}>
-              <Icon size={22} aria-hidden="true" />
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-section">
-        <div className="section-lead">
-          <p className="eyebrow">What the platform connects</p>
-          <h2>From signals to practical action.</h2>
-          <p>
-            SWAMARGA is designed around the complete alignment loop rather
-            than a single skill-matching score.
-          </p>
-        </div>
-
-        <div className="capability-list">
-          {capabilities.map((capability, index) => (
-            <div className="capability-row" key={capability}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <strong>{capability}</strong>
-              <ArrowRight size={17} aria-hidden="true" />
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-loop">
-        <div className="loop-heading">
-          <p className="eyebrow">Continuous improvement</p>
-          <h2>Training decisions should not stop at training.</h2>
-        </div>
-
-        <div className="loop-flow">
-          <div>
-            <BarChart3 aria-hidden="true" />
-            <strong>Demand</strong>
-            <span>Industry signals</span>
+      <section className="gov-section gov-data-section">
+        <div className="gov-container">
+          <div className="gov-section-heading">
+            <p className="gov-section-label">Information &amp; methodology</p>
+            <h2>Understanding the information used by SWAMARGA</h2>
+            <p>
+              The platform is designed to combine job-market signals,
+              employer inputs, training information and outcome data.
+            </p>
           </div>
-          <ArrowRight aria-hidden="true" />
-          <div>
-            <GraduationCap aria-hidden="true" />
-            <strong>Training</strong>
-            <span>Curriculum &amp; capacity</span>
-          </div>
-          <ArrowRight aria-hidden="true" />
-          <div>
-            <ShieldCheck aria-hidden="true" />
-            <strong>Validation</strong>
-            <span>Practical evidence</span>
-          </div>
-          <ArrowRight aria-hidden="true" />
-          <div>
-            <Route aria-hidden="true" />
-            <strong>Outcomes</strong>
-            <span>Placement &amp; feedback</span>
+
+          <div className="gov-info-links">
+            <Link to="/help#data">Data &amp; methodology</Link>
+            <Link to="/help#resources">Reports &amp; resources</Link>
+            <Link to="/about">About SWAMARGA</Link>
+            <Link to="/contact">Feedback &amp; contact</Link>
           </div>
         </div>
       </section>
 
-      <section className="home-note">
-        <div>
-          <strong>Prototype information</strong>
-          <p>
-            SWAMARGA is being developed as a prototype for SIH 2026, PS 26134.
-            Demonstration, seeded and illustrative data are identified where
-            applicable.
-          </p>
-        </div>
-
-        <Link to="/about" className="text-arrow-link">
-          Read about the platform <ArrowRight size={17} aria-hidden="true" />
-        </Link>
-      </section>
-    </div>
+    </>
   )
 }
+
+
+

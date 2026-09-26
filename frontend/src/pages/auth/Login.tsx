@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function Login() {
   const navigate = useNavigate()
-  const [showPassword, setShowPassword] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -12,71 +13,57 @@ export default function Login() {
   }
 
   return (
-    <section className="auth-page">
-      <div className="auth-intro">
-        <p className="eyebrow">SWAMARGA workspace</p>
+    <div className="auth-container">
+      <div className="auth-panel">
+        <p className="auth-section-label">SWAMARGA services</p>
         <h1>Sign in</h1>
-        <p>
-          Access your role-specific workspace for skills, training, demand
-          and employment information.
+        <p className="auth-intro">
+          Sign in to access services for candidates, training institutions,
+          employers and authorised government users.
         </p>
-      </div>
 
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <div className="form-field">
-          <label htmlFor="login-email">Email address</label>
-          <input
-            id="login-email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-          />
-        </div>
-
-        <div className="form-field">
-          <div className="field-label-row">
-            <label htmlFor="login-password">Password</label>
-            <button
-              type="button"
-              className="field-action"
-              onClick={() => setShowPassword((show) => !show)}
-              aria-label={showPassword ? 'Hide password' : 'Show password'}
-            >
-              {showPassword ? 'Hide' : 'Show'}
-            </button>
+        <form onSubmit={handleSubmit} className="auth-form">
+          <div className="gov-form-field">
+            <label htmlFor="login-email">Email address</label>
+            <input
+              id="login-email"
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              autoComplete="email"
+              required
+            />
           </div>
 
-          <input
-            id="login-password"
-            name="password"
-            type={showPassword ? 'text' : 'password'}
-            autoComplete="current-password"
-            required
-          />
-        </div>
+          <div className="gov-form-field">
+            <label htmlFor="login-password">Password</label>
+            <input
+              id="login-password"
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              autoComplete="current-password"
+              required
+            />
+          </div>
 
-        <button type="submit" className="button button-primary button-full">
-          Sign in
-        </button>
+          <button type="submit" className="gov-primary-button auth-submit">
+            Sign in
+          </button>
+        </form>
 
-        <Link to="/help" className="auth-secondary-link">
-          Need help accessing your account?
-        </Link>
-      </form>
+        <p className="auth-secondary">
+          Do not have an account? <Link to="/signup">Create an account</Link>
+        </p>
 
-      <div className="auth-divider">
-        <span>New to SWAMARGA?</span>
+        <p className="auth-prototype-note">
+          Prototype authentication: this demonstration currently routes a
+          successful sign-in to the candidate workspace.
+        </p>
       </div>
-
-      <Link to="/signup" className="button button-secondary button-full">
-        Create an account
-      </Link>
-
-      <p className="auth-note">
-        Government and administrator access is provided through authorised
-        accounts.
-      </p>
-    </section>
+    </div>
   )
 }
+
+
+

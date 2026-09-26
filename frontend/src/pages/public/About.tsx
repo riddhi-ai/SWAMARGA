@@ -1,89 +1,61 @@
-﻿import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 export default function About() {
   return (
-    <div className="public-page">
-      <section className="page-hero">
-        <p className="eyebrow">About SWAMARGA</p>
-        <h1>
-          Connecting industry demand,
-          <br />
-          training and employment outcomes.
-        </h1>
-        <p>
-          SWAMARGA is a proposed labour-market intelligence and
-          skill-alignment platform for candidates, training institutions,
-          employers and government stakeholders.
-        </p>
-      </section>
-
-      <section className="content-block" id="how-it-works">
-        <div className="content-label">The problem</div>
-        <div className="content-copy">
-          <h2>Skills requirements change faster than training systems can respond.</h2>
-          <p>
-            Training programmes can become disconnected from changing
-            technologies, local industry requirements, practical workplace
-            competencies and employer expectations.
+    <>
+      <section className="gov-page-heading">
+        <div className="gov-container">
+          <p className="gov-breadcrumb">
+            <Link to="/">Home</Link> / About SWAMARGA
           </p>
-          <p>
-            The platform is designed to connect these signals and turn them
-            into decisions about skills, courses, practical assessment,
-            trainers, equipment and capacity.
-          </p>
+          <h1>About SWAMARGA</h1>
+          <p>Skill &amp; Workforce Alignment through Market Analysis, Readiness, Guidance &amp; Advancement</p>
         </div>
       </section>
 
-      <section className="content-block">
-        <div className="content-label">Two connected pathways</div>
-        <div className="pathway-columns">
-          <div>
-            <h2>Candidate &amp; training</h2>
-            <p>
-              Candidate profile → skill and evidence gap → learning
-              recommendation → Experience Bridge → assessment and validation
-              → Competency Passport → opportunity matching.
-            </p>
+      <div className="gov-container gov-content-page">
+        <section>
+          <h2>Purpose</h2>
+          <p>
+            SWAMARGA is designed to help connect changing industry demand
+            with workforce development decisions. It brings together
+            information that can otherwise remain separated across labour
+            markets, training programmes, candidates, employers and
+            institutions.
+          </p>
+        </section>
+
+        <section>
+          <h2>What the platform connects</h2>
+          <div className="gov-definition-list">
+            <div><strong>Industry demand</strong><span>Roles, skills, locations and emerging requirements.</span></div>
+            <div><strong>Workforce readiness</strong><span>Skills, evidence and practical demonstrations.</span></div>
+            <div><strong>Training systems</strong><span>Courses, curriculum, trainers, labs and capacity.</span></div>
+            <div><strong>Outcomes</strong><span>Placement, employer feedback and competency validation.</span></div>
           </div>
+        </section>
 
-          <div>
-            <h2>Institution &amp; policy</h2>
-            <p>
-              Industry demand → skill analysis → course mapping → curriculum
-              recommendations → trainer, equipment and capacity planning →
-              district action.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="content-block">
-        <div className="content-label">Why evidence matters</div>
-        <div className="content-copy">
-          <h2>A skill gap and an evidence gap are not the same thing.</h2>
+        <section>
+          <h2>Designed for multiple stakeholders</h2>
           <p>
-            A candidate may not know a competency, may have learned it
-            theoretically, or may know it but not yet have practical evidence
-            demonstrating it.
+            Candidate, training institute, employer and government views
+            expose different parts of the same workforce development
+            ecosystem.
           </p>
-          <p>
-            SWAMARGA separates these states so that the next action can be
-            more specific than simply recommending another course.
-          </p>
-        </div>
-      </section>
+        </section>
 
-      <section className="about-cta">
-        <div>
-          <p className="eyebrow">Explore the service</p>
-          <h2>See how the platform works for your role.</h2>
-        </div>
-        <Link to="/signup" className="button button-primary">
-          Create an account
-          <ArrowRight size={18} aria-hidden="true" />
-        </Link>
-      </section>
-    </div>
+        <section>
+          <h2>Prototype status</h2>
+          <p>
+            SWAMARGA is being developed as a prototype for Smart India
+            Hackathon 2026, Problem Statement 26134. Demonstration data is
+            not presented as official Maharashtra statistics.
+          </p>
+        </section>
+      </div>
+    </>
   )
 }
+
+
+

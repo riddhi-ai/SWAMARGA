@@ -1,30 +1,31 @@
-﻿import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 export default function AuthLayout() {
   return (
-    <div className="auth-shell">
-      <a className="skip-link" href="#main-content">
-        Skip to main content
-      </a>
-
+    <div className="auth-site">
       <header className="auth-header">
-        <Link to="/" className="auth-brand" aria-label="SWAMARGA home">
-          <img src="/swamarga_eng_logo.png" alt="SWAMARGA" />
-        </Link>
-
-        <Link to="/" className="auth-home-link">
-          Return to SWAMARGA
-        </Link>
+        <div className="gov-container auth-header-inner">
+          <Link to="/" className="auth-brand">
+            <img src="/swamarga_eng_logo.png" alt="SWAMARGA" />
+          </Link>
+          <Link to="/" className="auth-back">
+            Return to SWAMARGA
+          </Link>
+        </div>
       </header>
 
-      <main id="main-content" className="auth-main">
+      <main className="auth-main">
         <Outlet />
       </main>
 
       <footer className="auth-footer">
-        <span>SWAMARGA · SIH 2026 · PS 26134</span>
-        <Link to="/help#accessibility">Accessibility</Link>
+        <div className="gov-container">
+          SWAMARGA prototype &nbsp;|&nbsp; SIH 2026 &nbsp;|&nbsp; PS 26134
+        </div>
       </footer>
     </div>
   )
 }
+
+
+
