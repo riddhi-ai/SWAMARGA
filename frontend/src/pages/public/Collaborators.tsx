@@ -1,48 +1,49 @@
-﻿export default function Collaborators() {
-  const groups = [
-    {
-      title: 'Government & public institutions',
-      text: 'Stakeholders responsible for skills, employment, district planning and public training programmes.',
-    },
-    {
-      title: 'Training ecosystem',
-      text: 'Training institutes, trainers and programme teams responsible for delivering relevant learning.',
-    },
-    {
-      title: 'Industry & employers',
-      text: 'Employers and industry representatives who define workplace requirements and validate competencies.',
-    },
-  ]
+import { Link } from 'react-router-dom'
 
+export default function Collaborators() {
   return (
-    <div className="public-page">
-      <section className="page-hero">
-        <p className="eyebrow">Collaborators</p>
-        <h1>Built around the people who shape the skills ecosystem.</h1>
-        <p>
-          SWAMARGA is designed to connect government, training providers,
-          employers and candidates without presenting unverified organisations
-          as confirmed partners.
-        </p>
+    <>
+      <section className="gov-page-heading">
+        <div className="gov-container">
+          <p className="gov-breadcrumb">
+            <Link to="/">Home</Link> / Collaborators
+          </p>
+          <h1>Collaborators &amp; ecosystem</h1>
+          <p>Stakeholders involved in workforce development and industry alignment.</p>
+        </div>
       </section>
 
-      <section className="collaborator-grid">
-        {groups.map((group, index) => (
-          <article key={group.title} className="collaborator-item">
-            <span>0{index + 1}</span>
-            <h2>{group.title}</h2>
-            <p>{group.text}</p>
-          </article>
-        ))}
-      </section>
+      <div className="gov-container gov-content-page">
+        <section>
+          <h2>Workforce ecosystem</h2>
+          <p>
+            Effective skill alignment involves coordination between
+            government authorities, training providers, employers, industry
+            representatives and candidates.
+          </p>
+        </section>
 
-      <section className="public-callout">
-        <strong>Prototype status</strong>
-        <p>
-          This page describes stakeholder categories for the proposed
-          platform. It does not claim confirmed partnerships or endorsements.
-        </p>
-      </section>
-    </div>
+        <section>
+          <div className="gov-definition-list">
+            <div><strong>Government &amp; district authorities</strong><span>Planning, monitoring and workforce interventions.</span></div>
+            <div><strong>Training institutions</strong><span>Curriculum, delivery, trainers and infrastructure.</span></div>
+            <div><strong>Employers &amp; industry</strong><span>Demand signals, competency requirements and validation.</span></div>
+            <div><strong>Candidates &amp; learners</strong><span>Skills, practical evidence, training and employment pathways.</span></div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Prototype information</h2>
+          <p>
+            Formal institutional partnerships and official data integrations
+            should only be represented after they are established and
+            verified.
+          </p>
+        </section>
+      </div>
+    </>
   )
 }
+
+
+

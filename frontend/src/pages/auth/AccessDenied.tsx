@@ -1,32 +1,26 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function AccessDenied() {
   return (
-    <section className="auth-page">
-      <div className="auth-intro">
-        <p className="eyebrow">Access</p>
-        <h1>This workspace is not available for this account.</h1>
-        <p>
-          Your account does not currently have permission to access this
-          section of SWAMARGA.
+    <div className="auth-container">
+      <div className="auth-panel">
+        <p className="auth-section-label">Access information</p>
+        <h1>Access not available</h1>
+        <p className="auth-intro">
+          This service requires an authorised account or the appropriate
+          service role.
         </p>
+
+        <div className="auth-actions">
+          <Link to="/login" className="gov-primary-button">
+            Sign in
+          </Link>
+          <Link to="/" className="gov-secondary-button">
+            Return to home
+          </Link>
+        </div>
       </div>
-
-      <div className="access-denied-box">
-        <strong>Need access?</strong>
-        <p>
-          Contact your organisation administrator or use the appropriate
-          account type.
-        </p>
-      </div>
-
-      <Link to="/" className="button button-primary button-full">
-        Return to SWAMARGA
-      </Link>
-
-      <Link to="/help" className="auth-secondary-link">
-        Visit Help
-      </Link>
-    </section>
+    </div>
   )
 }
+
