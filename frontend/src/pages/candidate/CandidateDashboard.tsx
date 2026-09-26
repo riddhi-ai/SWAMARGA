@@ -1,137 +1,251 @@
-﻿import { ArrowRight, CheckCircle2, CircleAlert } from "lucide-react"
-import { Link } from "react-router-dom"
-import MetricCard from "../../components/ui/MetricCard"
-import StatusBadge from "../../components/ui/StatusBadge"
-import { candidateDashboardData } from "../../services/mock/candidateDashboard"
+﻿import { Link } from 'react-router-dom'
+import { candidateDashboardData } from '../../services/mock/candidateDashboard'
+
+function EvidenceState({
+  level,
+  evidenceStatus,
+}: {
+  level: 'Strong' | 'Developing' | 'Gap'
+  evidenceStatus: 'Verified' | 'Unverified' | 'Missing'
+}) {
+  if (level === 'Gap') {
+    return <span className="evidence-state gap">Not demonstrated</span>
+  }
+
+  if (evidenceStatus === 'Unverified') {
+    return <span className="evidence-state unverified">Needs verification</span>
+  }
+
+  if (level === 'Developing') {
+    return <span className="evidence-state developing">Developing</span>
+  }
+
+  return <span className="evidence-state verified">Demonstrated</span>
+}
 
 export default function CandidateDashboard() {
-  const { candidate, skills, skillGaps, evidenceGaps } =
-    candidateDashboardData
+  const { candidate, skills, skillGaps, evidenceGaps } = candidateDashboardData
 
   return (
-    <div className="page-stack">
-      <section className="welcome-block">
+    <div className="candidate-page">
+      <div className="page-intro">
         <div>
-          <p className="eyebrow">Your current position</p>
-          <h2>Good progress, with a few gaps to close.</h2>
-          <p className="lead">
-            Your profile is being compared with current Cloud Support
-            Associate demand. The focus is on what you know and what you can
-            demonstrate.
+          <p className="section-kicker">Candidate overview</p>
+          <h1>{candidate.name}</h1>
+          <p className="page-subtitle">
+            {candidate.targetRole} <span aria-hidden="true">·</span>{' '}
+            {candidate.location}
           </p>
         </div>
 
-        <Link className="primary-button" to="/candidate/skill-evidence-gap">
-          View gap analysis
-          <ArrowRight size={17} aria-hidden="true" />
+        <Link className="secondary-button" to="/candidate/profile">
+          View profile
         </Link>
+      </div>
+
+      <section className="notice-bar" aria-label="Profile information">
+        <strong>
+          Your profile is being compared with current market requirements.
+        </strong>
+        <span>
+          The information below shows where your existing skills and evidence
+          are strong, developing, or require further action.
+        </span>
       </section>
 
-      <section className="metric-grid" aria-label="Readiness summary">
-        <MetricCard
-          label="Readiness"
-          value={`${candidate.readiness}%`}
-          detail="Based on current role requirements"
-        />
-        <MetricCard
-          label="Skill gaps"
-          value={skillGaps.length}
-          detail="Skills to develop for this role"
-        />
-        <MetricCard
-          label="Evidence gaps"
-          value={evidenceGaps.length}
-          detail="Skills needing stronger proof"
-        />
-        <MetricCard
-          label="Target role"
-          value="Cloud Support"
-          detail="Pune market"
-        />
+      <section
+        className="content-section"
+        aria-labelledby="requirements-heading"
+      >
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Role comparison</p>
+            <h2 id="requirements-heading">
+              Your skills and evidence
+            </h2>
+          </div>
+
+          <Link
+            to="/candidate/skill-evidence-gap"
+            className="text-link"
+          >
+            View full gap analysis
+          </Link>
+        </div>
+
+        <div className="data-table-wrap">
+          <table className="data-table">
+            <caption className="sr-only">
+              Candidate skills and evidence status
+            </caption>
+
+            <thead>
+              <tr>
+                <th scope="col">Competency</th>
+                <th scope="col">Category</th>
+                <th scope="col">Skill level</th>
+                <th scope="col">Evidence</th>
+                <th scope="col">Status</th>
+                <th scope="col">Next action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {skills.map((skill) => {
+                const needsAction =
+                  skill.level === 'Gap' ||
+                  skill.evidenceStatus === 'Unverified'
+
+                return (
+                  <tr key={skill.name}>
+                    <th scope="row">{skill.name}</th>
+                    <td>{skill.category}</td>
+                    <td>{skill.level}</td>
+                    <td>{skill.evidenceStatus}</td>
+                    <td>
+                      <EvidenceState
+                        level={skill.level}
+                        evidenceStatus={skill.evidenceStatus}
+                      />
+                    </td>
+                    <td>
+                      {needsAction ? (
+                        <Link
+                          to="/candidate/experience-bridge"
+                          className="row-link"
+                        >
+                          Build evidence
+                        </Link>
+                      ) : (
+                        <span className="muted-text">
+                          No action required
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
       </section>
 
-      <div className="dashboard-grid">
-        <section className="panel">
-          <div className="panel-heading">
+      <div className="two-column-sections">
+        <section
+          className="content-section"
+          aria-labelledby="market-heading"
+        >
+          <div className="section-heading compact">
             <div>
-              <p className="eyebrow">Skill & evidence picture</p>
-              <h3>What your profile currently shows</h3>
+              <p className="section-kicker">Labour-market signal</p>
+              <h2 id="market-heading">
+                {candidate.targetRole} in {candidate.location.split(',')[0]}
+              </h2>
             </div>
-            <Link to="/candidate/skill-evidence-gap" className="text-link">
-              See full analysis
-            </Link>
           </div>
 
-          <div className="skill-list">
-            {skills.map((skill) => {
-              const status =
-                skill.level === "Strong"
-                  ? "verified"
-                  : skill.level === "Developing"
-                    ? "developing"
-                    : "gap"
+          <div className="market-summary">
+            <div>
+              <span className="data-label">Target role</span>
+              <strong>{candidate.targetRole}</strong>
+            </div>
 
-              return (
-                <div className="skill-row" key={skill.name}>
-                  <div>
-                    <strong>{skill.name}</strong>
-                    <span>{skill.category}</span>
-                  </div>
-                  <StatusBadge status={status} />
-                </div>
-              )
-            })}
+            <div>
+              <span className="data-label">Current skill gaps</span>
+              <strong>{skillGaps.join(' · ')}</strong>
+            </div>
+
+            <div>
+              <span className="data-label">Evidence requiring action</span>
+              <strong>{evidenceGaps.join(' · ')}</strong>
+            </div>
           </div>
+
+          <Link
+            to="/candidate/market-demand"
+            className="text-link"
+          >
+            Examine market demand
+          </Link>
         </section>
 
-        <section className="panel">
-          <div className="panel-heading">
+        <section
+          className="content-section"
+          aria-labelledby="bridge-heading"
+        >
+          <div className="section-heading compact">
             <div>
-              <p className="eyebrow">Next actions</p>
-              <h3>Where to focus</h3>
+              <p className="section-kicker">Experience Bridge</p>
+              <h2 id="bridge-heading">
+                Turn gaps into practical evidence
+              </h2>
             </div>
           </div>
 
-          <div className="action-list">
-            <Link to="/candidate/experience-bridge" className="action-item">
-              <span className="action-icon warning">
-                <CircleAlert size={18} aria-hidden="true" />
-              </span>
-              <span>
-                <strong>Build evidence for AWS</strong>
-                <small>Complete a practical task and add the result.</small>
-              </span>
-              <ArrowRight size={17} aria-hidden="true" />
-            </Link>
+          <p className="section-copy">
+            Practical tasks can help demonstrate competencies that are
+            currently missing or supported only by unverified evidence.
+          </p>
 
-            <Link to="/candidate/experience-bridge" className="action-item">
-              <span className="action-icon">
-                <CheckCircle2 size={18} aria-hidden="true" />
-              </span>
-              <span>
-                <strong>Practice Linux troubleshooting</strong>
-                <small>Strengthen your existing verified evidence.</small>
-              </span>
-              <ArrowRight size={17} aria-hidden="true" />
-            </Link>
+          <div className="action-summary">
+            <strong>{evidenceGaps.length} evidence areas</strong>
+            <span>identified for practical development or verification</span>
           </div>
+
+          <Link
+            to="/candidate/experience-bridge"
+            className="primary-button"
+          >
+            View recommended tasks
+          </Link>
         </section>
       </div>
 
-      <section className="panel demand-panel">
-        <div>
-          <p className="eyebrow">Market signal</p>
-          <h3>Cloud Support roles are asking for more than course completion.</h3>
-          <p>
-            SWAMARGA connects role demand with demonstrated capability so you
-            can see what to learn, what to practise and what evidence to add.
-          </p>
+      <section
+        className="content-section passport-section"
+        aria-labelledby="passport-heading"
+      >
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Competency Passport</p>
+            <h2 id="passport-heading">
+              Your demonstrated skills
+            </h2>
+          </div>
+
+          <Link to="/candidate/passport" className="text-link">
+            Open passport
+          </Link>
         </div>
 
-        <Link to="/candidate/market-demand" className="secondary-button">
-          Explore demand
-          <ArrowRight size={17} aria-hidden="true" />
-        </Link>
+        <div className="passport-list">
+          <div>
+            <span className="passport-count">
+              {skills.filter(
+                (skill) =>
+                  skill.evidenceStatus === 'Verified'
+              ).length}
+            </span>
+            <span>Verified competencies</span>
+          </div>
+
+          <div>
+            <span className="passport-count">
+              {skills.filter(
+                (skill) =>
+                  skill.evidenceStatus === 'Unverified'
+              ).length}
+            </span>
+            <span>Evidence requiring verification</span>
+          </div>
+
+          <div>
+            <span className="passport-count">
+              {skillGaps.length}
+            </span>
+            <span>Competencies requiring development</span>
+          </div>
+        </div>
       </section>
     </div>
   )

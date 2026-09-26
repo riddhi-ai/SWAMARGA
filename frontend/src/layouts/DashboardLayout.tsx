@@ -1,77 +1,84 @@
-﻿import { NavLink, Outlet } from "react-router-dom"
-import {
-  BarChart3,
-  BriefcaseBusiness,
-  ClipboardCheck,
-  GraduationCap,
-  LayoutDashboard,
-  Settings,
-  UserRound,
-} from "lucide-react"
+﻿import { Outlet, NavLink } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
 
 const navigation = [
-  { label: "Overview", path: "/candidate", icon: LayoutDashboard },
-  { label: "Market demand", path: "/candidate/market-demand", icon: BarChart3 },
-  { label: "Skill & evidence gap", path: "/candidate/skill-evidence-gap", icon: ClipboardCheck },
-  { label: "Experience Bridge", path: "/candidate/experience-bridge", icon: GraduationCap },
-  { label: "Jobs", path: "/candidate/jobs", icon: BriefcaseBusiness },
-  { label: "Profile", path: "/candidate/profile", icon: UserRound },
-  { label: "Settings", path: "/candidate/settings", icon: Settings },
+  ['Overview', '/candidate'],
+  ['My Profile', '/candidate/profile'],
+  ['Market Demand', '/candidate/market-demand'],
+  ['Skill & Evidence Gap', '/candidate/skill-evidence-gap'],
+  ['Experience Bridge', '/candidate/experience-bridge'],
+  ['Training', '/candidate/training'],
+  ['Competency Passport', '/candidate/passport'],
+  ['Jobs', '/candidate/jobs'],
+  ['Applications', '/candidate/applications'],
 ]
 
 export default function DashboardLayout() {
+  const [open, setOpen] = useState(false)
+
   return (
-    <div className="dashboard-shell">
-      <aside className="sidebar">
-        <div className="sidebar-brand">
-          <img
-            src="/swamarga_eng_logo.png"
-            alt="SWAMARGA"
-            className="sidebar-logo"
-          />
-        </div>
+    <div className="app-shell">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
 
-        <nav aria-label="Candidate navigation" className="sidebar-nav">
-          {navigation.map(({ label, path, icon: Icon }) => (
-            <NavLink
-              key={path}
-              to={path}
-              end={path === "/candidate"}
-              className={({ isActive }) =>
-                `nav-item ${isActive ? "active" : ""}`
-              }
-            >
-              <Icon size={18} aria-hidden="true" />
-              <span>{label}</span>
-            </NavLink>
-          ))}
-        </nav>
+      <header className="service-header">
+        <div className="service-header-inner">
+          <NavLink to="/candidate" className="brand">
+            <img src="/swamarga_eng_logo.png" alt="SWAMARGA" />
+          </NavLink>
 
-        <div className="sidebar-footer">
-          <span className="role-label">Candidate workspace</span>
-        </div>
-      </aside>
-
-      <main className="dashboard-main">
-        <header className="dashboard-header">
-          <div>
-            <p className="eyebrow">Candidate workspace</p>
-            <h1>Career readiness</h1>
+          <div className="service-title">
+            <span>Candidate Services</span>
+            <strong>Skill & Workforce Alignment</strong>
           </div>
 
-          <div className="user-summary">
-            <span className="user-avatar" aria-hidden="true">RN</span>
-            <div>
-              <strong>Riddhi Naskari</strong>
-              <span>Cloud Support Associate</span>
-            </div>
-          </div>
-        </header>
+          <button
+            className="mobile-menu-button"
+            type="button"
+            aria-expanded={open}
+            aria-controls="candidate-navigation"
+            aria-label={open ? 'Close navigation' : 'Open navigation'}
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+      </header>
 
-        <div className="dashboard-content">
+      <div className="portal-layout">
+        <aside
+          id="candidate-navigation"
+          className={`service-sidebar ${open ? 'is-open' : ''}`}
+        >
+          <div className="sidebar-heading">My Services</div>
+
+          <nav aria-label="Candidate services">
+            {navigation.map(([label, path]) => (
+              <NavLink
+                key={path}
+                to={path}
+                end={path === '/candidate'}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `service-nav-link ${isActive ? 'active' : ''}`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="sidebar-footer">
+            <span>Signed in as</span>
+            <strong>Riddhi Naskari</strong>
+            <span>Candidate</span>
+          </div>
+        </aside>
+
+        <main id="main-content" className="service-main">
           <Outlet />
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   )
 }
