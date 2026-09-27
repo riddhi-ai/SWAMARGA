@@ -1,195 +1,246 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import {
+  TrendingUp,
+  GitCompare,
+  FolderKanban,
+  Award,
+  Sliders,
+  CheckCircle2,
+  AlertCircle,
+  ArrowRight,
+  ShieldCheck,
+  Building2,
+  Users,
+  Briefcase,
+  GraduationCap,
+} from 'lucide-react'
 
-const services = [
-  {
-    title: 'Market Demand',
-    text: 'View demand signals by sector, role, skill and location.',
-    link: 'Explore market demand',
-  },
-  {
-    title: 'Skill & Evidence Gap',
-    text: 'Identify skills that need development and competencies that need practical proof.',
-    link: 'Assess skill and evidence gaps',
-  },
-  {
-    title: 'Experience Bridge',
-    text: 'Use role-specific practical tasks to build demonstrable experience.',
-    link: 'Explore Experience Bridge',
-  },
-  {
-    title: 'Training & Curriculum',
-    text: 'Connect industry requirements with courses, curriculum and training needs.',
-    link: 'View training services',
-  },
-  {
-    title: 'Competency Passport',
-    text: 'Maintain evidence of demonstrated and employer-validated competencies.',
-    link: 'View competency services',
-  },
-  {
-    title: 'Workforce Planning',
-    text: 'Support district and institutional planning for skills, trainers and capacity.',
-    link: 'View planning services',
-  },
-]
+export const Home: React.FC = () => {
+  const { t } = useTranslation()
 
-export default function Home() {
   return (
-    <>
-      <section className="gov-page-heading">
-        <div className="gov-container">
-          <p className="gov-breadcrumb">Home</p>
-          <h1>Skill &amp; Workforce Alignment</h1>
-          <p>
-            From Industry Demand to Job-Ready Talent
-          </p>
-        </div>
-      </section>
+    <div className="space-y-12 pb-16">
+      {/* 1. HERO SECTION */}
+      <section className="bg-white border-b border-[#d9dde1] py-12 sm:py-16">
+        <div className="site-container">
+          <div className="max-w-3xl space-y-4">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#eef2f7] text-[var(--navy)] rounded border border-[#d4e0ee] text-xs font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-4 h-4 text-[var(--orange)]" />
+              <span>{t('common.state')}</span>
+            </div>
 
-      <section className="gov-container gov-intro">
-        <div className="gov-intro-main">
-          <h2>SWAMARGA</h2>
-          <p className="gov-lead">
-            A digital platform for aligning workforce development with
-            changing industry and labour-market requirements.
-          </p>
-          <p>
-            SWAMARGA brings together labour-market signals, skill
-            requirements, practical evidence, training information and
-            workforce planning in one service environment.
-          </p>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-[var(--navy)] leading-tight tracking-tight">
+              {t('home.heroTitle')}
+            </h1>
 
-          <div className="gov-action-row">
-            <Link to="/signup" className="gov-primary-button">
-              Access services
-            </Link>
-            <Link to="/about" className="gov-secondary-button">
-              About the platform
-            </Link>
+            <p className="text-base text-[#5a6578] leading-relaxed">
+              {t('home.heroSubtitle')}
+            </p>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <Link
+                to="/candidate"
+                className="gov-btn gov-btn-primary"
+              >
+                <span>{t('home.candidateCta')}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                to="/institute"
+                className="gov-btn gov-btn-secondary"
+              >
+                {t('home.instituteCta')}
+              </Link>
+              <Link
+                to="/employer"
+                className="gov-btn gov-btn-secondary"
+              >
+                {t('home.employerCta')}
+              </Link>
+              <Link
+                to="/government"
+                className="gov-btn gov-btn-secondary"
+              >
+                {t('home.govCta')}
+              </Link>
+            </div>
           </div>
         </div>
-
-        <aside className="gov-notice-box" aria-labelledby="notice-heading">
-          <h2 id="notice-heading">Important information</h2>
-          <ul>
-            <li>Prototype platform for SIH 2026, PS 26134.</li>
-            <li>Demonstration data is labelled where applicable.</li>
-            <li>Platform outputs are intended to support decision-making.</li>
-          </ul>
-        </aside>
       </section>
 
-      <section id="services" className="gov-section gov-section-border">
-        <div className="gov-container">
-          <div className="gov-section-heading">
-            <p className="gov-section-label">Services</p>
-            <h2>Workforce development services</h2>
-            <p>
-              Services are organised around the needs of candidates,
-              training institutions, employers and government authorities.
+      {/* 2. CORE DIFFERENTIATOR: SKILL GAP VS EVIDENCE GAP */}
+      <section className="site-container">
+        <div className="bg-white border border-[#d9dde1] rounded p-6 sm:p-8 shadow-xs border-t-4 border-t-[var(--orange)]">
+          <div className="max-w-2xl mb-6">
+            <h2 className="text-xl font-bold text-[var(--navy)] mb-2">
+              {t('home.differenceTitle')}
+            </h2>
+            <p className="text-xs text-[#5a6578]">
+              Traditional workforce portals conflate lacking skills with lacking verification. SWAMARGA solves this systematically:
             </p>
           </div>
 
-          <div className="gov-service-list">
-            {services.map((service) => (
-              <article className="gov-service-item" key={service.title}>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                <Link to="/signup">{service.link}</Link>
-              </article>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-5 bg-[#fdf2f2] border border-[#fecaca] rounded">
+              <div className="flex items-center gap-2 mb-2 text-[#d9383a]">
+                <AlertCircle className="w-5 h-5 shrink-0" />
+                <h3 className="text-base font-bold m-0">1. Skill Gap</h3>
+              </div>
+              <p className="text-xs text-[#2d3748] leading-relaxed m-0">
+                {t('home.skillGapExplain')}
+              </p>
+              <div className="mt-4 pt-3 border-t border-[#fecaca] text-xs font-semibold text-[#d9383a]">
+                Solution: Structured vocational curriculum and classroom laboratory instruction.
+              </div>
+            </div>
+
+            <div className="p-5 bg-[var(--orange-light)] border border-[#ffd5b8] rounded">
+              <div className="flex items-center gap-2 mb-2 text-[var(--orange-dark)]">
+                <CheckCircle2 className="w-5 h-5 shrink-0" />
+                <h3 className="text-base font-bold m-0">2. Evidence Gap</h3>
+              </div>
+              <p className="text-xs text-[#2d3748] leading-relaxed m-0">
+                {t('home.evidenceGapExplain')}
+              </p>
+              <div className="mt-4 pt-3 border-t border-[#ffd5b8] text-xs font-semibold text-[var(--orange-dark)]">
+                Solution: Experience Bridge scenario tasks generating verifiable log outputs.
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-[#f8fafc] border border-[#eef1f3] rounded text-xs text-[#2d3748] flex items-center justify-between">
+            <span>
+              <strong>The Experience Bridge: </strong>
+              {t('home.experienceBridgeExplain')}
+            </span>
+            <Link
+              to="/candidate/experience-bridge"
+              className="text-xs font-bold text-[var(--navy)] hover:underline shrink-0 ml-4"
+            >
+              Explore Scenarios →
+            </Link>
           </div>
         </div>
       </section>
 
-      <section id="stakeholders" className="gov-section">
-        <div className="gov-container">
-          <div className="gov-section-heading">
-            <p className="gov-section-label">Stakeholders</p>
-            <h2>Access services by role</h2>
+      {/* 3. CLOSED LOOP INTELLIGENCE FLOW */}
+      <section className="site-container space-y-6">
+        <div>
+          <h2 className="text-xl font-bold text-[var(--navy)] m-0">
+            {t('home.howItWorks')}
+          </h2>
+          <p className="text-xs text-[#5a6578] mt-1">
+            Continuous alignment connecting labour demand directly to state training capacity.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+          <div className="gov-card flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold text-[var(--orange)] block mb-2">01</span>
+              <h4 className="text-sm font-bold text-[var(--navy)] mb-2">{t('home.step1Title')}</h4>
+              <p className="text-xs text-[#5a6578] leading-relaxed m-0">{t('home.step1Desc')}</p>
+            </div>
           </div>
 
-          <div className="gov-stakeholder-grid">
-            <article>
-              <h3>Candidate</h3>
-              <p>
-                Understand market demand, identify skill and evidence gaps,
-                build practical experience and track competencies.
-              </p>
-              <Link to="/signup">Candidate services</Link>
-            </article>
+          <div className="gov-card flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold text-[var(--orange)] block mb-2">02</span>
+              <h4 className="text-sm font-bold text-[var(--navy)] mb-2">{t('home.step2Title')}</h4>
+              <p className="text-xs text-[#5a6578] leading-relaxed m-0">{t('home.step2Desc')}</p>
+            </div>
+          </div>
 
-            <article>
-              <h3>Training Institute</h3>
-              <p>
-                Review industry demand, course health, curriculum needs,
-                trainer requirements and capacity.
-              </p>
-              <Link to="/signup">Institute services</Link>
-            </article>
+          <div className="gov-card flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold text-[var(--orange)] block mb-2">03</span>
+              <h4 className="text-sm font-bold text-[var(--navy)] mb-2">{t('home.step3Title')}</h4>
+              <p className="text-xs text-[#5a6578] leading-relaxed m-0">{t('home.step3Desc')}</p>
+            </div>
+          </div>
 
-            <article>
-              <h3>Employer</h3>
-              <p>
-                Define competency requirements, review evidence and provide
-                employer validation and outcome feedback.
-              </p>
-              <Link to="/signup">Employer services</Link>
-            </article>
+          <div className="gov-card flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold text-[var(--orange)] block mb-2">04</span>
+              <h4 className="text-sm font-bold text-[var(--navy)] mb-2">{t('home.step4Title')}</h4>
+              <p className="text-xs text-[#5a6578] leading-relaxed m-0">{t('home.step4Desc')}</p>
+            </div>
+          </div>
 
-            <article>
-              <h3>Government / District Authority</h3>
-              <p>
-                Examine district-level demand and support workforce,
-                training and capacity planning.
-              </p>
-              <Link to="/login">Government services</Link>
-            </article>
+          <div className="gov-card flex flex-col justify-between">
+            <div>
+              <span className="text-xs font-mono font-bold text-[var(--orange)] block mb-2">05</span>
+              <h4 className="text-sm font-bold text-[var(--navy)] mb-2">{t('home.step5Title')}</h4>
+              <p className="text-xs text-[#5a6578] leading-relaxed m-0">{t('home.step5Desc')}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="gov-section gov-section-border">
-        <div className="gov-container">
-          <div className="gov-section-heading">
-            <p className="gov-section-label">How it works</p>
-            <h2>From demand to action</h2>
-          </div>
-
-          <ol className="gov-process">
-            <li><span>01</span><strong>Industry demand</strong></li>
-            <li><span>02</span><strong>Gap analysis</strong></li>
-            <li><span>03</span><strong>Practical experience</strong></li>
-            <li><span>04</span><strong>Verified competencies</strong></li>
-            <li><span>05</span><strong>Training &amp; capacity action</strong></li>
-            <li><span>06</span><strong>Placement &amp; feedback</strong></li>
-          </ol>
+      {/* 4. WORKSPACE ACCESS TILES */}
+      <section className="site-container space-y-6">
+        <div>
+          <h2 className="text-xl font-bold text-[var(--navy)] m-0">
+            Dedicated Stakeholder Workspaces
+          </h2>
+          <p className="text-xs text-[#5a6578] mt-1">
+            Role-tailored tools for all participants in Maharashtra's skills ecosystem.
+          </p>
         </div>
-      </section>
 
-      <section className="gov-section gov-data-section">
-        <div className="gov-container">
-          <div className="gov-section-heading">
-            <p className="gov-section-label">Information &amp; methodology</p>
-            <h2>Understanding the information used by SWAMARGA</h2>
-            <p>
-              The platform is designed to combine job-market signals,
-              employer inputs, training information and outcome data.
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="gov-card border-t-2 border-t-[var(--navy)]">
+            <Users className="w-6 h-6 text-[var(--navy)] mb-3" />
+            <h3 className="text-sm font-bold text-[var(--navy)] mb-1">Candidate Portal</h3>
+            <p className="text-xs text-[#5a6578] mb-4">
+              Diagnostic readiness test, Experience Bridge practical tasks, and Competency Passport.
             </p>
+            <Link to="/candidate" className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1">
+              <span>Open Candidate View</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
 
-          <div className="gov-info-links">
-            <Link to="/help#data">Data &amp; methodology</Link>
-            <Link to="/help#resources">Reports &amp; resources</Link>
-            <Link to="/about">About SWAMARGA</Link>
-            <Link to="/contact">Feedback &amp; contact</Link>
+          <div className="gov-card border-t-2 border-t-[var(--navy)]">
+            <GraduationCap className="w-6 h-6 text-[var(--navy)] mb-3" />
+            <h3 className="text-sm font-bold text-[var(--navy)] mb-1">Institute Workspace</h3>
+            <p className="text-xs text-[#5a6578] mb-4">
+              Course health metrics, lab capacity monitoring, and What-If planning simulator.
+            </p>
+            <Link to="/institute" className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1">
+              <span>Open Institute View</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="gov-card border-t-2 border-t-[var(--navy)]">
+            <Building2 className="w-6 h-6 text-[var(--navy)] mb-3" />
+            <h3 className="text-sm font-bold text-[var(--navy)] mb-1">Employer Workspace</h3>
+            <p className="text-xs text-[#5a6578] mb-4">
+              Competency framework specification, candidate evidence review, and validation queue.
+            </p>
+            <Link to="/employer" className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1">
+              <span>Open Employer View</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="gov-card border-t-2 border-t-[var(--navy)]">
+            <Briefcase className="w-6 h-6 text-[var(--navy)] mb-3" />
+            <h3 className="text-sm font-bold text-[var(--navy)] mb-1">Government Intelligence</h3>
+            <p className="text-xs text-[#5a6578] mb-4">
+              District capacity distribution, labour market signals, and policy intervention tools.
+            </p>
+            <Link to="/government" className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1">
+              <span>Open Planner View</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </section>
-
-    </>
+    </div>
   )
 }
-
-
-
+export default Home

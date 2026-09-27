@@ -1,41 +1,35 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-
 import en from './en.json'
-import hi from './hi.json'
 import mr from './mr.json'
+import hi from './hi.json'
 
-const STORAGE_KEY = 'swamarga.language'
+const savedLanguage = typeof window !== 'undefined' ? localStorage.getItem('swamarga_language') || 'en' : 'en'
 
-const savedLanguage =
-  typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null
+i18n
+  .use(initReactI18next)
+  .init({
+    resources: {
+      en: { translation: en },
+      mr: { translation: mr },
+      hi: { translation: hi },
+    },
+    lng: savedLanguage,
+    fallbackLng: 'en',
+    interpolation: {
+      escapeValue: false,
+    },
+  })
 
-void i18n.use(initReactI18next).init({
-  resources: {
-    en: { translation: en },
-    mr: { translation: mr },
-    hi: { translation: hi },
-  },
-  lng: savedLanguage ?? 'en',
-  fallbackLng: 'en',
-  interpolation: {
-    escapeValue: false,
-  },
-})
-
-function applyDocumentLanguage(language: string) {
-  if (typeof document === 'undefined') {
-    return
-  }
-
-  document.documentElement.lang = language
+if (typeof document !== 'undefined') {
+  document.documentElement.lang = savedLanguage
 }
 
-i18n.on('languageChanged', (language) => {
-  window.localStorage.setItem(STORAGE_KEY, language)
-  applyDocumentLanguage(language)
+i18n.on('languageChanged', (lng) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('swamarga_language', lng)
+    document.documentElement.lang = lng
+  }
 })
-
-applyDocumentLanguage(i18n.language)
 
 export default i18n

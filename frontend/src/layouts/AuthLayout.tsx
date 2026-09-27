@@ -1,31 +1,43 @@
-import { Link, Outlet } from 'react-router-dom'
+import React from 'react'
+import { Outlet, Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { SkipLink } from '../components/ui/SkipLink'
+import { GovUtilityBar } from '../components/navigation/GovUtilityBar'
 
-export default function AuthLayout() {
+export const AuthLayout: React.FC = () => {
+  const { t } = useTranslation()
+
   return (
-    <div className="auth-site">
-      <header className="auth-header">
-        <div className="gov-container auth-header-inner">
-          <Link to="/" className="auth-brand">
-            <img src="/swamarga_eng_logo.png" alt="SWAMARGA" />
+    <div className="min-h-screen flex flex-col bg-[#f7f8f5]">
+      <SkipLink />
+      <GovUtilityBar />
+      <main id="main-content" className="flex-1 flex flex-col items-center justify-center p-4 sm:p-6">
+        <div className="mb-6 text-center">
+          <Link to="/" className="inline-flex items-center gap-2 text-inherit no-underline">
+            <img
+              src="/swamarga_eng_logo.png"
+              alt="SWAMARGA"
+              className="h-10 w-auto"
+              onError={(e) => {
+                ;(e.target as HTMLElement).style.display = 'none'
+              }}
+            />
+            <span className="text-2xl font-black text-[var(--navy)]">
+              SWA<span className="text-[var(--orange)]">MARGA</span>
+            </span>
           </Link>
-          <Link to="/" className="auth-back">
-            Return to SWAMARGA
-          </Link>
+          <p className="text-xs text-[#5a6578] mt-1 font-medium">{t('common.tagline')}</p>
         </div>
-      </header>
 
-      <main className="auth-main">
-        <Outlet />
+        <div className="w-full max-w-md bg-white border border-[#d9dde1] rounded p-6 sm:p-8 shadow-xs">
+          <Outlet />
+        </div>
+
+        <div className="mt-8 text-center text-xs text-[#5a6578]">
+          <span>© 2026 SWAMARGA · {t('common.state')}</span>
+        </div>
       </main>
-
-      <footer className="auth-footer">
-        <div className="gov-container">
-          SWAMARGA prototype &nbsp;|&nbsp; SIH 2026 &nbsp;|&nbsp; PS 26134
-        </div>
-      </footer>
     </div>
   )
 }
-
-
-
+export default AuthLayout
