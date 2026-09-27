@@ -1,49 +1,61 @@
-import { useState } from 'react'
-import type { FormEvent } from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { Button } from '../../components/ui/Button'
+import { Mail, CheckCircle2 } from 'lucide-react'
 
-export default function VerifyEmail() {
+export const VerifyEmail: React.FC = () => {
   const navigate = useNavigate()
   const [code, setCode] = useState('')
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  const handleVerify = (e: React.FormEvent) => {
+    e.preventDefault()
     navigate('/candidate')
   }
 
   return (
-    <div className="auth-container">
-      <div className="auth-panel">
-        <p className="auth-section-label">Account verification</p>
-        <h1>Verify your email</h1>
-        <p className="auth-intro">
-          Enter the verification code sent to your email address.
+    <div className="space-y-6 text-center">
+      <div className="mx-auto w-12 h-12 rounded-full bg-[#eff9f0] border border-[#c2e5c6] flex items-center justify-center text-[#2e7a34]">
+        <Mail className="w-6 h-6" />
+      </div>
+
+      <div>
+        <h1 className="text-xl font-bold text-[var(--navy)] m-0">Verify Email Address</h1>
+        <p className="text-xs text-[#5a6578] mt-1.5 leading-relaxed">
+          We have dispatched a 6-digit verification code to your registered email address.
         </p>
+      </div>
 
-        <form onSubmit={handleSubmit} className="auth-form">
-          <div className="gov-form-field">
-            <label htmlFor="verification-code">Verification code</label>
-            <input
-              id="verification-code"
-              inputMode="numeric"
-              value={code}
-              onChange={(event) => setCode(event.target.value)}
-              required
-            />
-          </div>
+      <form onSubmit={handleVerify} className="space-y-4">
+        <div>
+          <label htmlFor="otp" className="sr-only">Verification Code</label>
+          <input
+            id="otp"
+            type="text"
+            required
+            maxLength={6}
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            placeholder="123456"
+            className="w-48 mx-auto text-center tracking-widest text-lg font-mono font-bold p-2.5 border border-[#d9dde1] rounded bg-[#f8fafc]"
+          />
+        </div>
 
-          <button type="submit" className="gov-primary-button auth-submit">
-            Verify email
-          </button>
-        </form>
+        <Button type="submit" variant="primary" className="w-full">
+          Confirm Verification & Open Workspace
+        </Button>
+      </form>
 
-        <p className="auth-secondary">
-          Need to start again? <Link to="/signup">Return to registration</Link>
-        </p>
+      <div className="text-xs text-[#5a6578]">
+        Didn't receive code?{' '}
+        <button
+          type="button"
+          onClick={() => alert('Verification code re-sent.')}
+          className="text-[var(--navy)] font-bold hover:underline bg-transparent border-0 cursor-pointer p-0"
+        >
+          Resend code
+        </button>
       </div>
     </div>
   )
 }
-
-
-
+export default VerifyEmail
