@@ -28,13 +28,13 @@ export const GovernmentGenericPage: React.FC<GovernmentGenericPageProps> = ({
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{title}</h1>
+        <h1 className="text-2xl font-bold text-(--navy) m-0">{title}</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">{subtitle}</p>
       </div>
 
       {planningMemo && (
         <div className="p-3.5 bg-[#f8fafc] border border-[#d9dde1] rounded text-xs text-[#5a6578]">
-          <strong className="text-[var(--navy)] block mb-0.5">Policy Planning Note:</strong>
+          <strong className="text-(--navy) block mb-0.5">Policy Planning Note:</strong>
           {planningMemo}
         </div>
       )}
@@ -44,7 +44,7 @@ export const GovernmentGenericPage: React.FC<GovernmentGenericPageProps> = ({
           <input 
             type="text" 
             placeholder="Search records..." 
-            className="w-full pl-3 pr-10 py-2 bg-white border border-[#cbd5e1] rounded text-sm focus:border-[var(--navy)] focus:ring-1 focus:ring-[var(--navy)]"
+            className="w-full pl-3 pr-10 py-2 bg-white border border-[#cbd5e1] rounded text-sm focus:border-(--navy) focus:ring-1 focus:ring-(--navy)"
           />
           <svg className="w-4 h-4 text-[#94a3b8] absolute right-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
         </div>
@@ -72,3 +72,5 @@ export const GovernmentGenericPage: React.FC<GovernmentGenericPageProps> = ({
   )
 }
 export default GovernmentGenericPage
+
+

@@ -38,15 +38,15 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ currentRole })
       <div className="px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
         {/* Left: Role identification & Context */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded bg-[var(--navy)] text-white flex items-center justify-center font-bold text-xs shrink-0">
+          <div className="w-8 h-8 rounded bg-(--navy) text-white flex items-center justify-center font-bold text-xs shrink-0">
             {roleLabels[currentRole].charAt(0)}
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-sm font-bold text-[var(--navy)]">
+              <span className="text-sm font-bold text-(--navy)">
                 {roleLabels[currentRole]} Workspace
               </span>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 bg-[var(--orange-light)] text-[var(--orange-dark)] rounded border border-[#ffd5b8]">
+              <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.2 bg-(--orange-light) text-(--orange-dark) rounded border border-[#ffd5b8]">
                 Demonstration
               </span>
             </div>
@@ -68,7 +68,7 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ currentRole })
                 id="workspace-select"
                 value={currentRole}
                 onChange={handleRoleChange}
-                className="bg-[#f8fafc] border border-[#d9dde1] rounded text-xs font-semibold text-[var(--navy)] py-1 pl-2.5 pr-7 focus:ring-1 focus:ring-[var(--navy)] cursor-pointer appearance-none"
+                className="bg-[#f8fafc] border border-[#d9dde1] rounded text-xs font-semibold text-(--navy) py-1 pl-2.5 pr-7 focus:ring-1 focus:ring-(--navy) cursor-pointer appearance-none"
               >
                 <option value="candidate">Candidate: Riddhi</option>
                 <option value="institute">Institute: ITI/Polytechnic</option>
@@ -93,3 +93,5 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({ currentRole })
     </header>
   )
 }
+
+

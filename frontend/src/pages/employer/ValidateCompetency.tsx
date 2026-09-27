@@ -28,7 +28,7 @@ export const ValidateCompetency: React.FC = () => {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#d9dde1] pb-4">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">Validate Candidate Evidence</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">Validate Candidate Evidence</h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">
             Review submitted diagnostic logs and issue official employer attestation.
           </p>
@@ -52,7 +52,7 @@ export const ValidateCompetency: React.FC = () => {
             <div className="space-y-4 text-xs">
               <div className="p-3 bg-[#f8fafc] border border-[#d9dde1] rounded">
                 <span className="font-bold text-[#5a6578] block mb-1">Task Context:</span>
-                <span className="text-sm font-bold text-[var(--navy)] block">
+                <span className="text-sm font-bold text-(--navy) block">
                   Troubleshoot a Cloud VPC Route Table Connectivity Failure
                 </span>
                 <span className="text-[#5a6578]">Candidate: Riddhi Naskari (Cloud Support Associate)</span>
@@ -126,3 +126,5 @@ Verification: curl -I https://s3.ap-south-1.amazonaws.com returned HTTP/1.1 200 
   )
 }
 export default ValidateCompetency
+
+

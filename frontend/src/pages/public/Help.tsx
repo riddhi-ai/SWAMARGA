@@ -35,8 +35,8 @@ export const Help: React.FC = () => {
       <Breadcrumbs items={[{ label: t('nav.help') }]} />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-3xl font-extrabold text-[var(--navy)] m-0 flex items-center gap-2">
-          <HelpCircle className="w-8 h-8 text-[var(--orange)]" />
+        <h1 className="text-3xl font-extrabold text-(--navy) m-0 flex items-center gap-2">
+          <HelpCircle className="w-8 h-8 text-(--orange)" />
           Help & Frequently Asked Questions
         </h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0 max-w-3xl">
@@ -47,9 +47,9 @@ export const Help: React.FC = () => {
       <div className="space-y-4 max-w-4xl">
         {faqs.map((faq, idx) => (
           <details key={idx} className="group bg-white border border-[#d9dde1] rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-            <summary className="cursor-pointer p-4 font-bold text-[var(--navy)] flex items-center justify-between select-none list-none group-open:bg-[#f8fafc] group-open:border-b group-open:border-[#d9dde1] transition-colors">
+            <summary className="cursor-pointer p-4 font-bold text-(--navy) flex items-center justify-between select-none list-none group-open:bg-[#f8fafc] group-open:border-b group-open:border-[#d9dde1] transition-colors">
               <span className="flex items-center gap-2">
-                <span className="text-[var(--orange)] opacity-70">0{idx + 1}.</span> {faq.q}
+                <span className="text-(--orange) opacity-70">0{idx + 1}.</span> {faq.q}
               </span>
               <ChevronRight className="w-5 h-5 text-[#5a6578] transition-transform duration-300 group-open:rotate-90" />
             </summary>
@@ -63,3 +63,5 @@ export const Help: React.FC = () => {
   )
 }
 export default Help
+
+

@@ -46,7 +46,7 @@ export const AdminDashboard: React.FC = () => {
   const columns: Column<VerificationQueueItem>[] = [
     {
       header: 'Organisation Name',
-      accessor: (row) => <strong className="text-[var(--navy)]">{row.entityName}</strong>,
+      accessor: (row) => <strong className="text-(--navy)">{row.entityName}</strong>,
     },
     {
       header: 'Entity Type',
@@ -88,7 +88,7 @@ export const AdminDashboard: React.FC = () => {
       <Breadcrumbs items={[{ label: 'Administration Console' }]} />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">Platform Administration & Verification</h1>
+        <h1 className="text-2xl font-bold text-(--navy) m-0">Platform Administration & Verification</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
           Operational management, institute verification, employer onboarding, and database registry audit.
         </p>
@@ -140,3 +140,5 @@ export const AdminDashboard: React.FC = () => {
   )
 }
 export default AdminDashboard
+
+

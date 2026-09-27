@@ -18,7 +18,7 @@ export const CourseHealth: React.FC = () => {
       header: 'Course Program',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.courseName}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.courseName}</span>
           <span className="text-[11px] text-[#5a6578]">Sector: {row.sector}</span>
         </div>
       ),
@@ -46,7 +46,7 @@ export const CourseHealth: React.FC = () => {
     {
       header: 'Identified Skill Deficiency',
       accessor: (row) => (
-        <span className="text-xs text-[var(--orange-dark)] font-medium block">
+        <span className="text-xs text-(--orange-dark) font-medium block">
           Missing: {row.topMissingSkill}
         </span>
       ),
@@ -70,7 +70,7 @@ export const CourseHealth: React.FC = () => {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#d9dde1] pb-4">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">Course Health Intelligence</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">Course Health Intelligence</h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">
             Identify emerging, declining, and outdated curriculum modules based on Maharashtra hiring requirements.
           </p>
@@ -89,8 +89,8 @@ export const CourseHealth: React.FC = () => {
           <span className="text-xs text-[#5a6578]">Cloud Infrastructure & Linux (78% placement)</span>
         </div>
 
-        <div className="p-4 bg-white border border-[#d9dde1] rounded border-l-4 border-l-[var(--orange)]">
-          <span className="text-xs font-bold text-[var(--orange-dark)] block mb-1">Needs Modernization</span>
+        <div className="p-4 bg-white border border-[#d9dde1] rounded border-l-4 border-l-(--orange)">
+          <span className="text-xs font-bold text-(--orange-dark) block mb-1">Needs Modernization</span>
           <span className="text-xl font-bold text-[#202124] block">1 Course</span>
           <span className="text-xs text-[#5a6578]">Diploma in Computer Hardware & Networking</span>
         </div>
@@ -117,3 +117,5 @@ export const CourseHealth: React.FC = () => {
   )
 }
 export default CourseHealth
+
+

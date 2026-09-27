@@ -139,8 +139,8 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ currentRole,
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2 text-xs font-semibold rounded transition-colors no-underline ${
                   isActive
-                    ? 'bg-[var(--navy)] text-white'
-                    : 'text-[#2d3748] hover:bg-[#f1f3f5] hover:text-[var(--navy)]'
+                    ? 'bg-(--navy) text-white'
+                    : 'text-[#2d3748] hover:bg-[#f1f3f5] hover:text-(--navy)'
                 }`
               }
             >
@@ -155,7 +155,7 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ currentRole,
       <div className="p-3 border-t border-[#eef1f3] bg-[#f8fafc]">
         <Link
           to="/"
-          className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-[#5a6578] hover:text-[var(--navy)] transition-colors rounded hover:bg-[#eef1f3] no-underline"
+          className="flex items-center gap-2 px-3 py-2 text-xs font-semibold text-[#5a6578] hover:text-(--navy) transition-colors rounded hover:bg-[#eef1f3] no-underline"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Public Service Portal</span>
@@ -164,3 +164,5 @@ export const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ currentRole,
     </aside>
   )
 }
+
+

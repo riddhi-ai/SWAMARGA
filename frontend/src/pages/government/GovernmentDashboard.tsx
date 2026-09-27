@@ -17,7 +17,7 @@ export const GovernmentDashboard: React.FC = () => {
   const columns: Column<DistrictMetric>[] = [
     {
       header: 'District Cluster',
-      accessor: (row) => <strong className="text-[var(--navy)]">{row.district}</strong>,
+      accessor: (row) => <strong className="text-(--navy)">{row.district}</strong>,
     },
     {
       header: 'Annual Cloud / IT Demand',
@@ -61,7 +61,7 @@ export const GovernmentDashboard: React.FC = () => {
               Illustrative Prototype Data
             </span>
           </div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('government.title')}</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">{t('government.title')}</h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">{t('government.subtitle')}</p>
         </div>
 
@@ -71,8 +71,8 @@ export const GovernmentDashboard: React.FC = () => {
         </Link>
       </div>
 
-      <div className="p-3 bg-[#eef2f7] border border-[#d4e0ee] rounded text-xs text-[var(--navy)] flex items-center gap-2">
-        <ShieldCheck className="w-4 h-4 text-[var(--orange)] shrink-0" />
+      <div className="p-3 bg-[#eef2f7] border border-[#d4e0ee] rounded text-xs text-(--navy) flex items-center gap-2">
+        <ShieldCheck className="w-4 h-4 text-(--orange) shrink-0" />
         <span>{t('government.prototypeLabel')}</span>
       </div>
 
@@ -113,7 +113,7 @@ export const GovernmentDashboard: React.FC = () => {
         title={t('government.districtTitle')}
         subtitle="Evaluating training infrastructure against industry hiring requisitions by district"
         action={
-          <Link to="/government/district-intelligence" className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1">
+          <Link to="/government/district-intelligence" className="text-xs font-bold text-(--navy) hover:underline flex items-center gap-1">
             <span>View District Deep Dive</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -130,3 +130,5 @@ export const GovernmentDashboard: React.FC = () => {
   )
 }
 export default GovernmentDashboard
+
+

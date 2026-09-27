@@ -42,7 +42,7 @@ export const Jobs: React.FC = () => {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#d9dde1] pb-4">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">
+          <h1 className="text-2xl font-bold text-(--navy) m-0">
             {t('jobs.title')}
           </h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">
@@ -67,12 +67,12 @@ export const Jobs: React.FC = () => {
         {filteredJobs.map((job) => (
           <div
             key={job.id}
-            className="bg-white border border-[#d9dde1] rounded p-5 shadow-xs hover:border-[var(--navy)] transition-colors"
+            className="bg-white border border-[#d9dde1] rounded p-5 shadow-xs hover:border-(--navy) transition-colors"
           >
             <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4">
               <div className="space-y-2 flex-1">
                 <div>
-                  <h3 className="text-base font-bold text-[var(--navy)] m-0">
+                  <h3 className="text-base font-bold text-(--navy) m-0">
                     {job.title}
                   </h3>
                   <div className="flex items-center gap-3 text-xs text-[#5a6578] mt-1">
@@ -112,7 +112,7 @@ export const Jobs: React.FC = () => {
                   </div>
 
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-[var(--orange-dark)] flex items-center gap-1 mb-1">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-(--orange-dark) flex items-center gap-1 mb-1">
                       <AlertTriangle className="w-3.5 h-3.5" />
                       {t('jobs.missingEvidence')}
                     </span>
@@ -121,7 +121,7 @@ export const Jobs: React.FC = () => {
                         job.missing_evidence.map((s) => (
                           <span
                             key={s}
-                            className="bg-[var(--orange-light)] text-[var(--orange-dark)] px-2 py-0.5 rounded text-[11px] font-medium border border-[#ffd5b8]"
+                            className="bg-(--orange-light) text-(--orange-dark) px-2 py-0.5 rounded text-[11px] font-medium border border-[#ffd5b8]"
                           >
                             {s}
                           </span>
@@ -137,7 +137,7 @@ export const Jobs: React.FC = () => {
 
                 {/* Match Explanation */}
                 <div className="p-2.5 bg-[#f8fafc] border border-[#eef1f3] rounded text-xs text-[#5a6578]">
-                  <strong className="text-[var(--navy)]">Match Explanation: </strong>
+                  <strong className="text-(--navy)">Match Explanation: </strong>
                   {job.match_rationale}
                 </div>
               </div>
@@ -174,3 +174,5 @@ export const Jobs: React.FC = () => {
   )
 }
 export default Jobs
+
+

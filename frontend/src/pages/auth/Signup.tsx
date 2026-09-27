@@ -20,7 +20,7 @@ export const Signup: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="border-b border-[#eef1f3] pb-3 text-center">
-        <h1 className="text-xl font-bold text-[var(--navy)] m-0">Create Registration</h1>
+        <h1 className="text-xl font-bold text-(--navy) m-0">Create Registration</h1>
         <p className="text-xs text-[#5a6578] mt-1 mb-0">
           Join the SWAMARGA workforce network
         </p>
@@ -86,7 +86,7 @@ export const Signup: React.FC = () => {
 
       <div className="pt-2 text-center text-xs text-[#5a6578]">
         Already registered?{' '}
-        <Link to="/login" className="font-bold text-[var(--navy)] hover:underline">
+        <Link to="/login" className="font-bold text-(--navy) hover:underline">
           Sign In
         </Link>
       </div>
@@ -94,3 +94,5 @@ export const Signup: React.FC = () => {
   )
 }
 export default Signup
+
+

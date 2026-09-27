@@ -18,7 +18,7 @@ export const Card: React.FC<CardProps> = ({
 }) => {
   const variantClass = {
     default: 'bg-white border border-[#d9dde1] shadow-xs',
-    bordered: 'bg-white border-2 border-[var(--navy)]',
+    bordered: 'bg-white border-2 border-(--navy)',
     muted: 'bg-[#f7f8f5] border border-[#d9dde1]',
   }[variant]
 
@@ -37,3 +37,5 @@ export const Card: React.FC<CardProps> = ({
     </div>
   )
 }
+
+

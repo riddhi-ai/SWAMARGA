@@ -43,8 +43,8 @@ export const PublicHeader: React.FC = () => {
                 className={({ isActive }) =>
                   `px-3 py-2 text-sm font-semibold rounded transition-colors no-underline ${
                     isActive
-                      ? 'text-[var(--orange)] bg-[var(--orange-light)]'
-                      : 'text-[#2d3748] hover:text-[var(--navy)] hover:bg-[#f1f3f5]'
+                      ? 'text-(--orange) bg-(--orange-light)'
+                      : 'text-[#2d3748] hover:text-(--navy) hover:bg-[#f1f3f5]'
                   }`
                 }
               >
@@ -59,7 +59,7 @@ export const PublicHeader: React.FC = () => {
               to="/login"
               className="gov-btn gov-btn-secondary gov-btn-sm"
             >
-              <UserCircle className="w-4 h-4 mr-1 text-[var(--navy)]" />
+              <UserCircle className="w-4 h-4 mr-1 text-(--navy)" />
               {t('common.signIn')}
             </Link>
             <Link
@@ -96,7 +96,7 @@ export const PublicHeader: React.FC = () => {
                   className={({ isActive }) =>
                     `px-3 py-2 text-sm font-semibold rounded no-underline ${
                       isActive
-                        ? 'text-[var(--orange)] bg-[var(--orange-light)]'
+                        ? 'text-(--orange) bg-(--orange-light)'
                         : 'text-[#2d3748] hover:bg-[#f1f3f5]'
                     }`
                   }
@@ -127,3 +127,5 @@ export const PublicHeader: React.FC = () => {
     </header>
   )
 }
+
+

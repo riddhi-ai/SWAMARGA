@@ -19,7 +19,7 @@ export const InstituteDashboard: React.FC = () => {
       header: 'Course Program',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.courseName}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.courseName}</span>
           <span className="text-[11px] text-[#5a6578]">Sector: {row.sector}</span>
         </div>
       ),
@@ -58,7 +58,7 @@ export const InstituteDashboard: React.FC = () => {
 
       <div className="border-b border-[#d9dde1] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('institute.title')}</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">{t('institute.title')}</h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">{t('institute.subtitle')}</p>
         </div>
 
@@ -105,7 +105,7 @@ export const InstituteDashboard: React.FC = () => {
         title={t('institute.courseHealthTitle')}
         subtitle="Evaluated against active recruiter demand in Maharashtra"
         action={
-          <Link to="/institute/course-health" className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1">
+          <Link to="/institute/course-health" className="text-xs font-bold text-(--navy) hover:underline flex items-center gap-1">
             <span>View All Health Reports</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -120,9 +120,9 @@ export const InstituteDashboard: React.FC = () => {
       </Card>
 
       {/* Simulator Quick Teaser */}
-      <div className="p-5 bg-white border border-[#d9dde1] rounded flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-l-[var(--orange)]">
+      <div className="p-5 bg-white border border-[#d9dde1] rounded flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-l-4 border-l-(--orange)">
         <div>
-          <h3 className="text-base font-bold text-[var(--navy)] m-0">{t('institute.simulatorTitle')}</h3>
+          <h3 className="text-base font-bold text-(--navy) m-0">{t('institute.simulatorTitle')}</h3>
           <p className="text-xs text-[#5a6578] mt-1 mb-0 max-w-2xl">
             {t('institute.simulatorDesc')}
           </p>
@@ -135,3 +135,5 @@ export const InstituteDashboard: React.FC = () => {
   )
 }
 export default InstituteDashboard
+
+

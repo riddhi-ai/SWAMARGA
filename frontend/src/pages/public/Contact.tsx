@@ -20,7 +20,7 @@ export const Contact: React.FC = () => {
       <Breadcrumbs items={[{ label: t('nav.contact') }]} />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-3xl font-extrabold text-[var(--navy)] m-0">Contact & Support Desk</h1>
+        <h1 className="text-3xl font-extrabold text-(--navy) m-0">Contact & Support Desk</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0 max-w-3xl">
           Get in touch with the SWAMARGA platform support administration in Maharashtra.
         </p>
@@ -37,17 +37,17 @@ export const Contact: React.FC = () => {
           <Card title="Official Contact Channels">
             <div className="space-y-4 text-xs text-[#2d3748]">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-[var(--orange)] shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-(--orange) shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-[var(--navy)]">Administrative Node</strong>
+                  <strong className="block text-(--navy)">Administrative Node</strong>
                   <span>SWAMARGA Workforce Intelligence Unit, Pune Center, Shivajinagar, Pune, Maharashtra 411005</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-2.5">
-                <Mail className="w-4 h-4 text-[var(--navy)] shrink-0 mt-0.5" />
+                <Mail className="w-4 h-4 text-(--navy) shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-[var(--navy)]">Electronic Mail</strong>
+                  <strong className="block text-(--navy)">Electronic Mail</strong>
                   <span>support.swamarga@maharashtra.gov.in (Prototype desk)</span>
                 </div>
               </div>
@@ -55,7 +55,7 @@ export const Contact: React.FC = () => {
               <div className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-[#3e9b45] shrink-0 mt-0.5" />
                 <div>
-                  <strong className="block text-[var(--navy)]">Support Hours</strong>
+                  <strong className="block text-(--navy)">Support Hours</strong>
                   <span>Monday through Friday: 09:30 AM to 05:30 PM IST</span>
                 </div>
               </div>
@@ -139,3 +139,5 @@ export const Contact: React.FC = () => {
   )
 }
 export default Contact
+
+

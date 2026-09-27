@@ -54,7 +54,7 @@ import AdminGenericPage from './pages/admin/AdminGenericPage'
 
 // Shared generic columns for sub-screens
 const genericColumns = [
-  { header: 'Item / Record', accessor: (r: any) => <strong className="text-[var(--navy)]">{r[0]}</strong> },
+  { header: 'Item / Record', accessor: (r: any) => <strong className="text-(--navy)]">{r[0]}</strong> },
   { header: 'Status / Context', accessor: (r: any) => <span className="text-xs text-[#202124]">{r[1]}</span> },
   { header: 'Planning Action', accessor: (r: any) => <span className="text-xs text-[#5a6578]">{r[2]}</span> },
 ]
@@ -568,3 +568,5 @@ export default function App() {
     </Routes>
   )
 }
+
+

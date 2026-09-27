@@ -60,7 +60,7 @@ export const EmployerDashboard: React.FC = () => {
       header: 'Candidate & Role',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.candidateName}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.candidateName}</span>
           <span className="text-[11px] text-[#5a6578]">{row.targetRole}</span>
         </div>
       ),
@@ -112,7 +112,7 @@ export const EmployerDashboard: React.FC = () => {
 
       <div className="border-b border-[#d9dde1] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('employer.title')}</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">{t('employer.title')}</h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">{t('employer.subtitle')}</p>
         </div>
 
@@ -170,3 +170,5 @@ export const EmployerDashboard: React.FC = () => {
   )
 }
 export default EmployerDashboard
+
+

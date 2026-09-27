@@ -25,7 +25,7 @@ export const Login: React.FC = () => {
   return (
     <div className="space-y-6">
       <div className="border-b border-[#eef1f3] pb-3 text-center">
-        <h1 className="text-xl font-bold text-[var(--navy)] m-0">Sign in to SWAMARGA</h1>
+        <h1 className="text-xl font-bold text-(--navy) m-0">Sign in to SWAMARGA</h1>
         <p className="text-xs text-[#5a6578] mt-1 mb-0">
           Access your personalized workforce workspace
         </p>
@@ -41,7 +41,7 @@ export const Login: React.FC = () => {
             type="button"
             onClick={() => handleQuickSelect('candidate', 'riddhi.demo@swamarga.local')}
             className={`p-1.5 rounded text-left border cursor-pointer font-semibold ${
-              role === 'candidate' ? 'bg-[var(--navy)] text-white border-[var(--navy)]' : 'bg-white border-[#d9dde1] text-[#2d3748]'
+              role === 'candidate' ? 'bg-(--navy) text-white border-(--navy)' : 'bg-white border-[#d9dde1] text-[#2d3748]'
             }`}
           >
             Candidate (Riddhi)
@@ -50,7 +50,7 @@ export const Login: React.FC = () => {
             type="button"
             onClick={() => handleQuickSelect('institute', 'admin@polytechnic.ac.in')}
             className={`p-1.5 rounded text-left border cursor-pointer font-semibold ${
-              role === 'institute' ? 'bg-[var(--navy)] text-white border-[var(--navy)]' : 'bg-white border-[#d9dde1] text-[#2d3748]'
+              role === 'institute' ? 'bg-(--navy) text-white border-(--navy)' : 'bg-white border-[#d9dde1] text-[#2d3748]'
             }`}
           >
             Training Institute
@@ -59,7 +59,7 @@ export const Login: React.FC = () => {
             type="button"
             onClick={() => handleQuickSelect('employer', 'recruiting@techcloud.in')}
             className={`p-1.5 rounded text-left border cursor-pointer font-semibold ${
-              role === 'employer' ? 'bg-[var(--navy)] text-white border-[var(--navy)]' : 'bg-white border-[#d9dde1] text-[#2d3748]'
+              role === 'employer' ? 'bg-(--navy) text-white border-(--navy)' : 'bg-white border-[#d9dde1] text-[#2d3748]'
             }`}
           >
             Employer Partner
@@ -68,7 +68,7 @@ export const Login: React.FC = () => {
             type="button"
             onClick={() => handleQuickSelect('government', 'planner@dvet.gov.in')}
             className={`p-1.5 rounded text-left border cursor-pointer font-semibold ${
-              role === 'government' ? 'bg-[var(--navy)] text-white border-[var(--navy)]' : 'bg-white border-[#d9dde1] text-[#2d3748]'
+              role === 'government' ? 'bg-(--navy) text-white border-(--navy)' : 'bg-white border-[#d9dde1] text-[#2d3748]'
             }`}
           >
             State Government
@@ -135,7 +135,7 @@ export const Login: React.FC = () => {
 
       <div className="pt-2 text-center text-xs text-[#5a6578]">
         Don't have an account?{' '}
-        <Link to="/signup" className="font-bold text-[var(--navy)] hover:underline">
+        <Link to="/signup" className="font-bold text-(--navy) hover:underline">
           Create registration
         </Link>
       </div>
@@ -143,3 +143,5 @@ export const Login: React.FC = () => {
   )
 }
 export default Login
+
+

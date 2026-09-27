@@ -19,7 +19,7 @@ export const CandidateProfile: React.FC = () => {
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('nav.profile')}</h1>
+        <h1 className="text-2xl font-bold text-(--navy) m-0">{t('nav.profile')}</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
           Personal credentials, target career aspiration, and verified resume profile.
         </p>
@@ -30,7 +30,7 @@ export const CandidateProfile: React.FC = () => {
           <Card title="Candidate Identity">
             <div className="space-y-3 text-xs">
               <div className="flex items-center gap-2 text-[#202124]">
-                <User className="w-4 h-4 text-[var(--navy)]" />
+                <User className="w-4 h-4 text-(--navy)" />
                 <span className="font-bold text-sm">{DEMO_CANDIDATE.name}</span>
               </div>
               <div className="flex items-center gap-2 text-[#5a6578]">
@@ -43,7 +43,7 @@ export const CandidateProfile: React.FC = () => {
               </div>
               <div className="flex items-center gap-2 text-[#5a6578]">
                 <Briefcase className="w-4 h-4" />
-                <span className="font-semibold text-[var(--navy)]">{DEMO_CANDIDATE.target_role}</span>
+                <span className="font-semibold text-(--navy)">{DEMO_CANDIDATE.target_role}</span>
               </div>
             </div>
           </Card>
@@ -51,11 +51,11 @@ export const CandidateProfile: React.FC = () => {
           <Card title="Education & Qualifications">
             <div className="text-xs space-y-2 text-[#2d3748]">
               <div>
-                <span className="font-bold block text-[var(--navy)]">Master of Computer Applications (MCA)</span>
+                <span className="font-bold block text-(--navy)">Master of Computer Applications (MCA)</span>
                 <span className="text-[#5a6578]">Savitribai Phule Pune University (2024 - 2026)</span>
               </div>
               <div className="pt-2 border-t border-[#eef1f3]">
-                <span className="font-bold block text-[var(--navy)]">B.Sc. Computer Science</span>
+                <span className="font-bold block text-(--navy)">B.Sc. Computer Science</span>
                 <span className="text-[#5a6578]">Pune University (Graduated 2024)</span>
               </div>
             </div>
@@ -68,7 +68,7 @@ export const CandidateProfile: React.FC = () => {
               {DEMO_CANDIDATE.resume_text}
             </div>
 
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--navy)] mb-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-(--navy) mb-2">
               Detected Skills Extracted by Engine
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -85,3 +85,5 @@ export const CandidateProfile: React.FC = () => {
   )
 }
 export default CandidateProfile
+
+

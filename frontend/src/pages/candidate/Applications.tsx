@@ -55,7 +55,7 @@ export const Applications: React.FC = () => {
       header: 'Role & Organisation',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.role}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.role}</span>
           <span className="text-[11px] text-[#5a6578] flex items-center gap-1">
             <Building2 className="w-3 h-3" />
             {row.company} · {row.location}
@@ -104,7 +104,7 @@ export const Applications: React.FC = () => {
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('nav.applications')}</h1>
+        <h1 className="text-2xl font-bold text-(--navy) m-0">{t('nav.applications')}</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
           Track active applications and employer requests for verified competency evidence.
         </p>
@@ -125,3 +125,5 @@ export const Applications: React.FC = () => {
   )
 }
 export default Applications
+
+

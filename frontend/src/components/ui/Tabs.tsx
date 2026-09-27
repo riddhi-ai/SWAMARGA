@@ -30,7 +30,7 @@ export const Tabs: React.FC<TabsProps> = ({
               onClick={() => onChange(tab.id)}
               className={`py-3 px-1 border-b-2 font-semibold text-sm whitespace-nowrap transition-colors flex items-center gap-2 cursor-pointer ${
                 isActive
-                  ? 'border-[var(--navy)] text-[var(--navy)]'
+                  ? 'border-(--navy) text-(--navy)'
                   : 'border-transparent text-[#5a6578] hover:text-[#202124] hover:border-[#b5bcc4]'
               }`}
               aria-current={isActive ? 'page' : undefined}
@@ -39,7 +39,7 @@ export const Tabs: React.FC<TabsProps> = ({
               {typeof tab.count === 'number' && (
                 <span
                   className={`text-xs px-2 py-0.5 rounded-full ${
-                    isActive ? 'bg-[var(--navy)] text-white' : 'bg-[#eef1f3] text-[#5a6578]'
+                    isActive ? 'bg-(--navy) text-white' : 'bg-[#eef1f3] text-[#5a6578]'
                   }`}
                 >
                   {tab.count}
@@ -52,3 +52,5 @@ export const Tabs: React.FC<TabsProps> = ({
     </div>
   )
 }
+
+

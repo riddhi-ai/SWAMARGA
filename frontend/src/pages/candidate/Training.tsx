@@ -59,7 +59,7 @@ export const Training: React.FC = () => {
       header: 'Course Program',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.courseTitle}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.courseTitle}</span>
           <span className="text-[11px] text-[#5a6578] flex items-center gap-1">
             <MapPin className="w-3 h-3" />
             {row.institute} · {row.location}
@@ -112,15 +112,15 @@ export const Training: React.FC = () => {
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('nav.training')}</h1>
+        <h1 className="text-2xl font-bold text-(--navy) m-0">{t('nav.training')}</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
           Vocational pathways specifically mapped to your identified Skill Gaps in Maharashtra.
         </p>
       </div>
 
-      <div className="bg-[#eef2f7] border border-[#d4e0ee] p-4 rounded text-xs text-[var(--navy)] flex items-center justify-between">
+      <div className="bg-[#eef2f7] border border-[#d4e0ee] p-4 rounded text-xs text-(--navy) flex items-center justify-between">
         <div>
-          <strong className="block text-sm font-bold text-[var(--navy)]">
+          <strong className="block text-sm font-bold text-(--navy)">
             Curriculum Aligned with Experience Bridge
           </strong>
           These certified government institute programs incorporate SWAMARGA Experience Bridge scenario labs directly into their syllabus.
@@ -142,3 +142,5 @@ export const Training: React.FC = () => {
   )
 }
 export default Training
+
+

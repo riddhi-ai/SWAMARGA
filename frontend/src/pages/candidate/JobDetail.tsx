@@ -35,7 +35,7 @@ export const JobDetail: React.FC = () => {
             </span>
             <Badge variant="neutral">{job.location}</Badge>
           </div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{job.title}</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">{job.title}</h1>
           <div className="flex items-center gap-3 text-xs text-[#5a6578] mt-1">
             <span className="font-semibold text-[#202124] flex items-center gap-1">
               <Building2 className="w-3.5 h-3.5" />
@@ -72,21 +72,21 @@ export const JobDetail: React.FC = () => {
               {job.description}
             </p>
 
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--navy)] mb-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-(--navy) mb-2">
               Mandatory Competencies Demanded
             </h4>
             <div className="flex flex-wrap gap-1.5 mb-4">
               {job.skills?.map((s) => (
                 <span
                   key={s}
-                  className="bg-[#f1f3f5] text-[var(--navy)] px-2.5 py-1 rounded text-xs font-semibold border border-[#d9dde1]"
+                  className="bg-[#f1f3f5] text-(--navy) px-2.5 py-1 rounded text-xs font-semibold border border-[#d9dde1]"
                 >
                   {s}
                 </span>
               ))}
             </div>
 
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--navy)] mb-2">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-(--navy) mb-2">
               Explainable Match Rationale
             </h4>
             <p className="text-xs text-[#2d3748] leading-relaxed bg-[#f8fafc] p-3 rounded border border-[#eef1f3]">
@@ -110,7 +110,7 @@ export const JobDetail: React.FC = () => {
               </div>
 
               <div className="pt-2 border-t border-[#eef1f3]">
-                <span className="font-bold text-[var(--orange-dark)] block mb-1">
+                <span className="font-bold text-(--orange-dark) block mb-1">
                   Evidence Gaps to Clear:
                 </span>
                 <p className="text-[#5a6578] m-0">
@@ -136,3 +136,5 @@ export const JobDetail: React.FC = () => {
   )
 }
 export default JobDetail
+
+

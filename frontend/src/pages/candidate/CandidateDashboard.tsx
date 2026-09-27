@@ -39,7 +39,7 @@ export const CandidateDashboard: React.FC = () => {
     {
       header: t('candidate.skillCol'),
       accessor: (row) => (
-        <div className="font-bold text-[var(--navy)]">
+        <div className="font-bold text-(--navy)">
           {row.skill}
         </div>
       ),
@@ -81,7 +81,7 @@ export const CandidateDashboard: React.FC = () => {
           return (
             <div className="flex flex-col gap-0.5">
               <Badge variant="evidenceGap">{t('common.evidenceGap')}</Badge>
-              <span className="text-[11px] text-[var(--orange-dark)] font-medium">
+              <span className="text-[11px] text-(--orange-dark) font-medium">
                 Certification on file · Lacks practical proof
               </span>
             </div>
@@ -99,7 +99,7 @@ export const CandidateDashboard: React.FC = () => {
       accessor: (row) => (
         <Link
           to={row.actionUrl}
-          className="inline-flex items-center gap-1 text-xs font-bold text-[var(--navy)] hover:text-[var(--orange)] hover:underline"
+          className="inline-flex items-center gap-1 text-xs font-bold text-(--navy) hover:text-(--orange) hover:underline"
         >
           <span>{row.recommendedAction}</span>
           <ArrowRight className="w-3.5 h-3.5 shrink-0" />
@@ -113,18 +113,18 @@ export const CandidateDashboard: React.FC = () => {
       <Breadcrumbs items={[{ label: t('nav.overview') }]} />
 
       {/* 1. ROLE CONTEXT BANNER */}
-      <div className="bg-white border border-[#d9dde1] rounded p-5 sm:p-6 shadow-xs border-l-4 border-l-[var(--navy)]">
+      <div className="bg-white border border-[#d9dde1] rounded p-5 sm:p-6 shadow-xs border-l-4 border-l-(--navy)">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className="text-xs font-bold uppercase tracking-wider text-[#5a6578]">
                 {t('candidate.targetRole')}
               </span>
-              <span className="text-xs bg-[#eef2f7] text-[var(--navy)] font-semibold px-2 py-0.5 rounded">
+              <span className="text-xs bg-[#eef2f7] text-(--navy) font-semibold px-2 py-0.5 rounded">
                 Pune Cluster
               </span>
             </div>
-            <h1 className="text-2xl font-bold text-[var(--navy)] m-0">
+            <h1 className="text-2xl font-bold text-(--navy) m-0">
               {candidate.target_role || 'Cloud Support Associate'}
             </h1>
             <p className="text-xs text-[#5a6578] mt-1 mb-0">
@@ -152,7 +152,7 @@ export const CandidateDashboard: React.FC = () => {
 
       {/* 2. THE 4 CORE DIAGNOSTIC QUESTIONS */}
       <div className="gov-card">
-        <h2 className="text-base font-bold text-[var(--navy)] mb-4">
+        <h2 className="text-base font-bold text-(--navy) mb-4">
           {t('candidate.keyQuestions')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
@@ -170,8 +170,8 @@ export const CandidateDashboard: React.FC = () => {
             </p>
           </div>
 
-          <div className="p-3 bg-[var(--orange-light)] border border-[#ffd5b8] rounded">
-            <span className="font-bold text-[var(--orange-dark)] block mb-1">3. The Critical Evidence Gap</span>
+          <div className="p-3 bg-(--orange-light) border border-[#ffd5b8] rounded">
+            <span className="font-bold text-(--orange-dark) block mb-1">3. The Critical Evidence Gap</span>
             <p className="text-[#202124] font-semibold m-0">
               AWS: Certificate exists, but lacks authenticated practical workplace logs. Resolvable via 1 Experience Bridge task.
             </p>
@@ -229,7 +229,7 @@ export const CandidateDashboard: React.FC = () => {
         action={
           <Link
             to="/candidate/experience-bridge"
-            className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1"
+            className="text-xs font-bold text-(--navy) hover:underline flex items-center gap-1"
           >
             <span>View All Tasks ({tasks.length})</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -240,7 +240,7 @@ export const CandidateDashboard: React.FC = () => {
           {tasks.map((task) => (
             <div
               key={task.id}
-              className="p-4 border border-[#d9dde1] rounded bg-white hover:border-[var(--navy)] transition-colors flex flex-col justify-between"
+              className="p-4 border border-[#d9dde1] rounded bg-white hover:border-(--navy) transition-colors flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between gap-1 mb-2">
@@ -251,7 +251,7 @@ export const CandidateDashboard: React.FC = () => {
                     {task.estimated_minutes} mins
                   </span>
                 </div>
-                <h4 className="text-sm font-bold text-[var(--navy)] mb-1.5 leading-snug">
+                <h4 className="text-sm font-bold text-(--navy) mb-1.5 leading-snug">
                   {task.title}
                 </h4>
                 <p className="text-xs text-[#5a6578] line-clamp-2 mb-3">
@@ -260,7 +260,7 @@ export const CandidateDashboard: React.FC = () => {
               </div>
 
               <div className="pt-2 border-t border-[#eef1f3] flex items-center justify-between">
-                <span className="text-[11px] font-semibold text-[var(--orange-dark)]">
+                <span className="text-[11px] font-semibold text-(--orange-dark)">
                   Bridges Evidence Gap
                 </span>
                 <Link
@@ -282,7 +282,7 @@ export const CandidateDashboard: React.FC = () => {
         action={
           <Link
             to="/candidate/jobs"
-            className="text-xs font-bold text-[var(--navy)] hover:underline flex items-center gap-1"
+            className="text-xs font-bold text-(--navy) hover:underline flex items-center gap-1"
           >
             <span>All Opportunities ({jobs.length})</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -294,7 +294,7 @@ export const CandidateDashboard: React.FC = () => {
             <div key={job.id} className="py-3.5 first:pt-0 last:pb-0 flex flex-col md:flex-row md:items-center justify-between gap-3">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <h4 className="text-sm font-bold text-[var(--navy)] m-0">
+                  <h4 className="text-sm font-bold text-(--navy) m-0">
                     {job.title}
                   </h4>
                   <span className="text-xs text-[#5a6578]">· {job.company}</span>
@@ -305,7 +305,7 @@ export const CandidateDashboard: React.FC = () => {
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     Verified: Linux, Troubleshooting
                   </span>
-                  <span className="text-xs text-[var(--orange-dark)] font-semibold ml-2 flex items-center gap-1">
+                  <span className="text-xs text-(--orange-dark) font-semibold ml-2 flex items-center gap-1">
                     <AlertTriangle className="w-3.5 h-3.5" />
                     Missing Evidence: AWS
                   </span>
@@ -337,3 +337,5 @@ export const CandidateDashboard: React.FC = () => {
   )
 }
 export default CandidateDashboard
+
+

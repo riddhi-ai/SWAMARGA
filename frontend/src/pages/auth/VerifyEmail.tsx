@@ -19,7 +19,7 @@ export const VerifyEmail: React.FC = () => {
       </div>
 
       <div>
-        <h1 className="text-xl font-bold text-[var(--navy)] m-0">Verify Email Address</h1>
+        <h1 className="text-xl font-bold text-(--navy) m-0">Verify Email Address</h1>
         <p className="text-xs text-[#5a6578] mt-1.5 leading-relaxed">
           We have dispatched a 6-digit verification code to your registered email address.
         </p>
@@ -50,7 +50,7 @@ export const VerifyEmail: React.FC = () => {
         <button
           type="button"
           onClick={() => alert('Verification code re-sent.')}
-          className="text-[var(--navy)] font-bold hover:underline bg-transparent border-0 cursor-pointer p-0"
+          className="text-(--navy) font-bold hover:underline bg-transparent border-0 cursor-pointer p-0"
         >
           Resend code
         </button>
@@ -59,3 +59,5 @@ export const VerifyEmail: React.FC = () => {
   )
 }
 export default VerifyEmail
+
+

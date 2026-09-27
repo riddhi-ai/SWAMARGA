@@ -47,7 +47,7 @@ export const WhatIfSimulator: React.FC = () => {
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#d9dde1] pb-4">
         <div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('institute.simulatorTitle')}</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">{t('institute.simulatorTitle')}</h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">{t('institute.simulatorDesc')}</p>
         </div>
 
@@ -68,7 +68,7 @@ export const WhatIfSimulator: React.FC = () => {
               <div>
                 <div className="flex justify-between items-center mb-1">
                   <label htmlFor="seats-range" className="font-bold text-[#202124]">
-                    {t('institute.seats')}: <span className="text-[var(--navy)] text-sm">{seats}</span>
+                    {t('institute.seats')}: <span className="text-(--navy) text-sm">{seats}</span>
                   </label>
                   <span className="text-[11px] text-[#5a6578]">Capacity: 60 - 300</span>
                 </div>
@@ -80,14 +80,14 @@ export const WhatIfSimulator: React.FC = () => {
                   step="10"
                   value={seats}
                   onChange={(e) => setSeats(Number(e.target.value))}
-                  className="w-full cursor-pointer accent-[var(--navy)]"
+                  className="w-full cursor-pointer accent-(--navy)"
                 />
               </div>
 
               <div>
                 <div className="flex justify-between items-center mb-1">
                   <label htmlFor="trainers-range" className="font-bold text-[#202124]">
-                    {t('institute.trainers')}: <span className="text-[var(--navy)] text-sm">{trainers}</span>
+                    {t('institute.trainers')}: <span className="text-(--navy) text-sm">{trainers}</span>
                   </label>
                   <span className="text-[11px] text-[#5a6578]">1:20 standard</span>
                 </div>
@@ -99,14 +99,14 @@ export const WhatIfSimulator: React.FC = () => {
                   step="1"
                   value={trainers}
                   onChange={(e) => setTrainers(Number(e.target.value))}
-                  className="w-full cursor-pointer accent-[var(--navy)]"
+                  className="w-full cursor-pointer accent-(--navy)"
                 />
               </div>
 
               <div>
                 <div className="flex justify-between items-center mb-1">
                   <label htmlFor="labs-range" className="font-bold text-[#202124]">
-                    {t('institute.labs')}: <span className="text-[var(--navy)] text-sm">{labs}</span>
+                    {t('institute.labs')}: <span className="text-(--navy) text-sm">{labs}</span>
                   </label>
                   <span className="text-[11px] text-[#5a6578]">Cloud Workstations</span>
                 </div>
@@ -118,7 +118,7 @@ export const WhatIfSimulator: React.FC = () => {
                   step="5"
                   value={labs}
                   onChange={(e) => setLabs(Number(e.target.value))}
-                  className="w-full cursor-pointer accent-[var(--navy)]"
+                  className="w-full cursor-pointer accent-(--navy)"
                 />
               </div>
             </div>
@@ -194,3 +194,5 @@ export const WhatIfSimulator: React.FC = () => {
   )
 }
 export default WhatIfSimulator
+
+
