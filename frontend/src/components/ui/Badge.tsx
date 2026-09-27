@@ -16,10 +16,10 @@ export const Badge: React.FC<BadgeProps> = ({
 }) => {
   const styles = {
     verified: 'bg-[#eff9f0] text-[#2e7a34] border-[#c2e5c6]',
-    evidenceGap: 'bg-[var(--orange-light)] text-[var(--orange-dark)] border-[#ffd5b8]',
+    evidenceGap: 'bg-(--orange-light) text-(--orange-dark) border-[#ffd5b8]',
     skillGap: 'bg-[#fdf2f2] text-[#d9383a] border-[#fecaca]',
     pending: 'bg-[#fffbeb] text-[#b45309] border-[#fde68a]',
-    neutral: 'bg-[#eef2f7] text-[var(--navy)] border-[#d4e0ee]',
+    neutral: 'bg-[#eef2f7] text-(--navy) border-[#d4e0ee]',
     high: 'bg-[#fdf2f2] text-[#991b1b] border-[#fecaca]',
     medium: 'bg-[#fffbeb] text-[#92400e] border-[#fde68a]',
     low: 'bg-[#f0fdf4] text-[#166534] border-[#bbf7d0]',
@@ -50,3 +50,5 @@ export const Badge: React.FC<BadgeProps> = ({
     </span>
   )
 }
+
+

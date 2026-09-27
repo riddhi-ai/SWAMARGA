@@ -18,7 +18,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
         <li className="inline-flex items-center">
           <Link
             to="/"
-            className="inline-flex items-center text-[#5a6578] hover:text-[var(--navy)] transition-colors"
+            className="inline-flex items-center text-[#5a6578] hover:text-(--navy) transition-colors"
           >
             <Home className="w-3.5 h-3.5 mr-1" aria-hidden="true" />
             <span>Home</span>
@@ -33,7 +33,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
               {item.to && !isLast ? (
                 <Link
                   to={item.to}
-                  className="text-[#5a6578] hover:text-[var(--navy)] transition-colors font-medium"
+                  className="text-[#5a6578] hover:text-(--navy) transition-colors font-medium"
                 >
                   {item.label}
                 </Link>
@@ -49,3 +49,5 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
     </nav>
   )
 }
+
+

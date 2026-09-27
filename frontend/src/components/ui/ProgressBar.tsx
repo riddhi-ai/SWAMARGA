@@ -20,9 +20,9 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   const percentage = Math.min(Math.max(Math.round((value / max) * 100), 0), 100)
 
   const toneColor = {
-    default: 'bg-[var(--navy)]',
+    default: 'bg-(--navy)',
     green: 'bg-[#3e9b45]',
-    orange: 'bg-[var(--orange)]',
+    orange: 'bg-(--orange)',
   }[tone]
 
   return (
@@ -48,3 +48,5 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
     </div>
   )
 }
+
+

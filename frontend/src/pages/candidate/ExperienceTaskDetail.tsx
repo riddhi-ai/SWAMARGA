@@ -64,7 +64,7 @@ export const ExperienceTaskDetail: React.FC = () => {
               Competency: {task.skill}
             </Badge>
           </div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{task.title}</h1>
+          <h1 className="text-2xl font-bold text-(--navy) m-0">{task.title}</h1>
         </div>
 
         <Link
@@ -113,7 +113,7 @@ export const ExperienceTaskDetail: React.FC = () => {
 
               <div className="pt-4 flex items-center justify-between">
                 <div>
-                  <strong className="text-sm text-[var(--navy)]">Weighted Total Score: 90 / 100</strong>
+                  <strong className="text-sm text-(--navy)">Weighted Total Score: 90 / 100</strong>
                   <p className="text-[#5a6578] m-0">Queued for final employer attestation.</p>
                 </div>
                 <Link
@@ -135,7 +135,7 @@ export const ExperienceTaskDetail: React.FC = () => {
                 {task.description}
               </p>
 
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[var(--navy)] mb-2">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-(--navy) mb-2">
                 {t('experienceBridge.instructions')}
               </h4>
               <ol className="text-xs text-[#2d3748] space-y-2.5 pl-4 list-decimal">
@@ -228,14 +228,14 @@ export const ExperienceTaskDetail: React.FC = () => {
                 {task.rubric?.map((r, idx) => (
                   <div key={idx} className="flex items-center justify-between pb-1.5 border-b border-[#eef1f3]">
                     <span className="text-[#202124]">{r.criterion}</span>
-                    <span className="font-bold text-[var(--navy)]">{r.weight}</span>
+                    <span className="font-bold text-(--navy)">{r.weight}</span>
                   </div>
                 ))}
               </div>
             </Card>
 
             <div className="p-4 bg-[#f8fafc] border border-[#d9dde1] rounded text-xs text-[#5a6578]">
-              <strong className="block text-[var(--navy)] mb-1 font-bold">Anti-Cheating Integrity Policy</strong>
+              <strong className="block text-(--navy) mb-1 font-bold">Anti-Cheating Integrity Policy</strong>
               All submitted evidence is validated through static log analysis, syntax validation, and randomized parameter checks.
             </div>
           </div>
@@ -245,3 +245,5 @@ export const ExperienceTaskDetail: React.FC = () => {
   )
 }
 export default ExperienceTaskDetail
+
+

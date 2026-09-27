@@ -19,7 +19,7 @@ export const ExperienceBridge: React.FC = () => {
       header: 'Task Designation',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.title}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.title}</span>
           <span className="text-[11px] text-[#5a6578]">{row.why_it_matters}</span>
         </div>
       ),
@@ -73,7 +73,7 @@ export const ExperienceBridge: React.FC = () => {
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">
+        <h1 className="text-2xl font-bold text-(--navy) m-0">
           {t('experienceBridge.title')}
         </h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
@@ -81,10 +81,10 @@ export const ExperienceBridge: React.FC = () => {
         </p>
       </div>
 
-      <div className="bg-[var(--orange-light)] border border-[#ffd5b8] p-4 rounded flex items-start gap-3">
-        <ShieldCheck className="w-5 h-5 text-[var(--orange-dark)] shrink-0 mt-0.5" />
-        <div className="text-xs text-[var(--orange-dark)]">
-          <strong className="block text-sm font-bold text-[var(--orange-dark)] mb-0.5">
+      <div className="bg-(--orange-light) border border-[#ffd5b8] p-4 rounded flex items-start gap-3">
+        <ShieldCheck className="w-5 h-5 text-(--orange-dark) shrink-0 mt-0.5" />
+        <div className="text-xs text-(--orange-dark)">
+          <strong className="block text-sm font-bold text-(--orange-dark) mb-0.5">
             Employer-Verified Task Scenarios
           </strong>
           These simulation scenarios are curated directly from technical interview rubrics used by IT employers in Maharashtra. Evidence submitted here feeds directly into your official Competency Passport upon assessment.
@@ -106,3 +106,5 @@ export const ExperienceBridge: React.FC = () => {
   )
 }
 export default ExperienceBridge
+
+

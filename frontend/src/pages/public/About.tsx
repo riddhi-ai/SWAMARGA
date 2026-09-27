@@ -13,10 +13,10 @@ export const About: React.FC = () => {
 
       <div className="border-b border-[#d9dde1] pb-4">
         <div className="flex items-center gap-2 mb-1">
-          <Landmark className="w-4 h-4 text-[var(--orange)]" />
+          <Landmark className="w-4 h-4 text-(--orange)" />
           <span className="text-xs uppercase font-bold text-[#5a6578]">Public Mission</span>
         </div>
-        <h1 className="text-3xl font-extrabold text-[var(--navy)] m-0">About SWAMARGA</h1>
+        <h1 className="text-3xl font-extrabold text-(--navy) m-0">About SWAMARGA</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0 max-w-3xl">
           {t('common.fullName')}
         </p>
@@ -39,9 +39,9 @@ export const About: React.FC = () => {
           <Card title="Core Architectural Pillars">
             <div className="space-y-4 text-xs">
               <div className="flex items-start gap-3">
-                <Target className="w-5 h-5 text-[var(--orange)] shrink-0 mt-0.5" />
+                <Target className="w-5 h-5 text-(--orange) shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-[var(--navy)] mb-1">1. Demand-to-Action Mapping</h4>
+                  <h4 className="font-bold text-(--navy) mb-1">1. Demand-to-Action Mapping</h4>
                   <p className="text-[#5a6578] m-0">
                     Live industry hiring requisitions in key Maharashtra employment clusters (Pune, Mumbai, Nagpur) are parsed into standardized technical competencies.
                   </p>
@@ -51,7 +51,7 @@ export const About: React.FC = () => {
               <div className="flex items-start gap-3">
                 <Award className="w-5 h-5 text-[#3e9b45] shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-[var(--navy)] mb-1">2. Experience Bridge Simulation</h4>
+                  <h4 className="font-bold text-(--navy) mb-1">2. Experience Bridge Simulation</h4>
                   <p className="text-[#5a6578] m-0">
                     Students and jobseekers execute authenticated workplace scenarios to bridge evidence gaps without requiring prior formal employment.
                   </p>
@@ -59,9 +59,9 @@ export const About: React.FC = () => {
               </div>
 
               <div className="flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-[var(--navy)] shrink-0 mt-0.5" />
+                <ShieldCheck className="w-5 h-5 text-(--navy) shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-[var(--navy)] mb-1">3. Employer-Validated Competency Passport</h4>
+                  <h4 className="font-bold text-(--navy) mb-1">3. Employer-Validated Competency Passport</h4>
                   <p className="text-[#5a6578] m-0">
                     Demonstrated capabilities receive formal attestation from verified industry partners, creating an immutable competency record for recruitment.
                   </p>
@@ -76,7 +76,7 @@ export const About: React.FC = () => {
             <div className="text-xs space-y-3 text-[#2d3748]">
               <div>
                 <span className="font-bold text-[#5a6578] block">State Initiative</span>
-                <span className="font-semibold text-[var(--navy)]">Government of Maharashtra</span>
+                <span className="font-semibold text-(--navy)">Government of Maharashtra</span>
               </div>
               <div className="pt-2 border-t border-[#eef1f3]">
                 <span className="font-bold text-[#5a6578] block">Focus Sector</span>
@@ -94,7 +94,7 @@ export const About: React.FC = () => {
           </Card>
 
           <div className="p-4 bg-[#f8fafc] border border-[#d9dde1] rounded text-xs text-[#5a6578]">
-            <strong className="text-[var(--navy)] block mb-1">Ethical Data Standard</strong>
+            <strong className="text-(--navy) block mb-1">Ethical Data Standard</strong>
             Data shown throughout this demonstration platform is sourced and curated for prototype evaluation. No figures are presented as official gazetted statistics.
           </div>
         </div>
@@ -103,3 +103,5 @@ export const About: React.FC = () => {
   )
 }
 export default About
+
+

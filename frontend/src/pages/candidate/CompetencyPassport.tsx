@@ -64,7 +64,7 @@ export const CompetencyPassport: React.FC = () => {
       header: 'Competency Area',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.competency}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.competency}</span>
           <span className="text-[11px] text-[#5a6578]">Verified on: {row.verificationDate}</span>
         </div>
       ),
@@ -145,7 +145,7 @@ export const CompetencyPassport: React.FC = () => {
             </span>
             <Badge variant="verified">Active Credential</Badge>
           </div>
-          <h1 className="text-2xl font-bold text-[var(--navy)] m-0">
+          <h1 className="text-2xl font-bold text-(--navy) m-0">
             {t('passport.title')}
           </h1>
           <p className="text-sm text-[#5a6578] mt-1 mb-0">
@@ -171,7 +171,7 @@ export const CompetencyPassport: React.FC = () => {
             <span className="text-[#5a6578] font-bold uppercase tracking-wider block mb-1">
               {t('passport.issuedTo')}
             </span>
-            <span className="text-base font-bold text-[var(--navy)] block">
+            <span className="text-base font-bold text-(--navy) block">
               {DEMO_CANDIDATE.name}
             </span>
             <span className="text-[#718096]">MCA Graduate · Pune, Maharashtra</span>
@@ -225,9 +225,9 @@ export const CompetencyPassport: React.FC = () => {
 
       {/* OFFICIAL NOTICE */}
       <div className="bg-[#f8fafc] border border-[#d9dde1] p-4 rounded text-xs text-[#5a6578] flex items-start gap-2.5">
-        <ShieldCheck className="w-5 h-5 text-[var(--navy)] shrink-0 mt-0.5" />
+        <ShieldCheck className="w-5 h-5 text-(--navy) shrink-0 mt-0.5" />
         <div>
-          <strong className="text-[var(--navy)] font-bold block mb-0.5">
+          <strong className="text-(--navy) font-bold block mb-0.5">
             Public Integrity & Employer Transparency Notice
           </strong>
           {t('passport.disclaimer')}
@@ -237,3 +237,5 @@ export const CompetencyPassport: React.FC = () => {
   )
 }
 export default CompetencyPassport
+
+

@@ -12,7 +12,7 @@ export const Collaborators: React.FC = () => {
       <Breadcrumbs items={[{ label: t('nav.collaborators') }]} />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-3xl font-extrabold text-[var(--navy)] m-0">Ecosystem Collaborators</h1>
+        <h1 className="text-3xl font-extrabold text-(--navy) m-0">Ecosystem Collaborators</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0 max-w-3xl">
           SWAMARGA connects educational institutions, vocational centers, industry employers, and public policy makers across Maharashtra.
         </p>
@@ -73,10 +73,12 @@ export const Collaborators: React.FC = () => {
       </div>
 
       <div className="p-4 bg-[#f8fafc] border border-[#d9dde1] rounded text-xs text-[#5a6578]">
-        <strong className="text-[var(--navy)] block mb-1">Collaboration Registration</strong>
+        <strong className="text-(--navy) block mb-1">Collaboration Registration</strong>
         Accredited institutions and registered employers can request integration through the SWAMARGA verification queue.
       </div>
     </div>
   )
 }
 export default Collaborators
+
+

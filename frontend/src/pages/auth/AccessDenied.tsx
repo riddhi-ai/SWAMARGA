@@ -11,7 +11,7 @@ export const AccessDenied: React.FC = () => {
       </div>
 
       <div>
-        <h1 className="text-xl font-bold text-[var(--navy)] m-0">Access Restricted</h1>
+        <h1 className="text-xl font-bold text-(--navy) m-0">Access Restricted</h1>
         <p className="text-xs text-[#5a6578] mt-1.5 leading-relaxed">
           Your current user credentials do not have administrative authorization for the requested workspace section.
         </p>
@@ -32,3 +32,5 @@ export const AccessDenied: React.FC = () => {
   )
 }
 export default AccessDenied
+
+

@@ -35,7 +35,7 @@ export const MarketDemand: React.FC = () => {
   const columns: Column<DemandRow>[] = [
     {
       header: 'Skill Requirement',
-      accessor: (row) => <strong className="text-[var(--navy)]">{row.skill}</strong>,
+      accessor: (row) => <strong className="text-(--navy)">{row.skill}</strong>,
     },
     {
       header: 'Market Signal',
@@ -65,7 +65,7 @@ export const MarketDemand: React.FC = () => {
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">{t('nav.marketDemand')}</h1>
+        <h1 className="text-2xl font-bold text-(--navy) m-0">{t('nav.marketDemand')}</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
           Aggregated employer demand signals for Cloud Support Associate across Pune & Maharashtra.
         </p>
@@ -111,3 +111,5 @@ export const MarketDemand: React.FC = () => {
   )
 }
 export default MarketDemand
+
+

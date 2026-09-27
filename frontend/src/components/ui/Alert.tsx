@@ -17,8 +17,8 @@ export const Alert: React.FC<AlertProps> = ({
   className = '',
 }) => {
   const styles = {
-    info: 'bg-[#eef2f7] text-[var(--navy)] border-[var(--navy)]/30',
-    warning: 'bg-[var(--orange-light)] text-[var(--orange-dark)] border-[var(--orange)]/40',
+    info: 'bg-[#eef2f7] text-(--navy) border-(--navy)/30',
+    warning: 'bg-(--orange-light) text-(--orange-dark) border-(--orange)/40',
     success: 'bg-[#eff9f0] text-[#2e7a34] border-[#3e9b45]/40',
     error: 'bg-[#fdf2f2] text-[#d9383a] border-[#d9383a]/40',
   }[variant]
@@ -54,3 +54,5 @@ export const Alert: React.FC<AlertProps> = ({
     </div>
   )
 }
+
+

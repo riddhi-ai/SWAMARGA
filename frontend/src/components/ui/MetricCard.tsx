@@ -20,8 +20,8 @@ export const MetricCard: React.FC<MetricCardProps> = ({
   className = '',
 }) => {
   const toneBorder = {
-    default: 'border-l-4 border-l-[var(--navy)]',
-    orange: 'border-l-4 border-l-[var(--orange)]',
+    default: 'border-l-4 border-l-(--navy)',
+    orange: 'border-l-4 border-l-(--orange)',
     green: 'border-l-4 border-l-[#3e9b45]',
     red: 'border-l-4 border-l-[#d9383a]',
   }[tone]
@@ -46,3 +46,5 @@ export const MetricCard: React.FC<MetricCardProps> = ({
     </div>
   )
 }
+
+

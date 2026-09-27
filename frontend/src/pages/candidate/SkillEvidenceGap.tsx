@@ -19,7 +19,7 @@ export const SkillEvidenceGap: React.FC = () => {
       header: 'Required Competency',
       accessor: (row) => (
         <div>
-          <span className="font-bold text-[var(--navy)] block text-sm">{row.skill}</span>
+          <span className="font-bold text-(--navy) block text-sm">{row.skill}</span>
           <span className="text-[11px] text-[#5a6578]">Target: Cloud Support Associate</span>
         </div>
       ),
@@ -78,7 +78,7 @@ export const SkillEvidenceGap: React.FC = () => {
       accessor: (row) => (
         <Link
           to={row.actionUrl}
-          className="inline-flex items-center gap-1 text-xs font-bold text-[var(--navy)] hover:text-[var(--orange)]"
+          className="inline-flex items-center gap-1 text-xs font-bold text-(--navy) hover:text-(--orange)"
         >
           <span>{row.recommendedAction}</span>
           <ArrowRight className="w-3.5 h-3.5 shrink-0" />
@@ -97,7 +97,7 @@ export const SkillEvidenceGap: React.FC = () => {
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">
+        <h1 className="text-2xl font-bold text-(--navy) m-0">
           {t('gapAnalysis.title')}
         </h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
@@ -122,8 +122,8 @@ export const SkillEvidenceGap: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-white border-2 border-[var(--orange)] p-4 rounded shadow-2xs">
-          <div className="flex items-center gap-2 mb-2 text-[var(--orange-dark)]">
+        <div className="bg-white border-2 border-(--orange) p-4 rounded shadow-2xs">
+          <div className="flex items-center gap-2 mb-2 text-(--orange-dark)">
             <AlertCircle className="w-5 h-5" />
             <h3 className="text-sm font-bold m-0 uppercase tracking-wide">
               2. Evidence Gap
@@ -132,7 +132,7 @@ export const SkillEvidenceGap: React.FC = () => {
           <p className="text-xs text-[#2d3748] m-0 leading-relaxed">
             {t('gapAnalysis.evidenceGapMeaning')}
           </p>
-          <div className="mt-3 pt-2 border-t border-[#eef1f3] text-[11px] font-semibold text-[var(--orange-dark)]">
+          <div className="mt-3 pt-2 border-t border-[#eef1f3] text-[11px] font-semibold text-(--orange-dark)">
             Candidate Status: AWS (Course Certificate on file)
           </div>
         </div>
@@ -168,7 +168,7 @@ export const SkillEvidenceGap: React.FC = () => {
 
       {/* ACTION GUIDANCE */}
       <div className="bg-[#f8fafc] border border-[#d9dde1] p-5 rounded">
-        <h3 className="text-sm font-bold text-[var(--navy)] mb-2">
+        <h3 className="text-sm font-bold text-(--navy) mb-2">
           Recommended Action Strategy for Riddhi Naskari:
         </h3>
         <ol className="text-xs text-[#2d3748] space-y-2 pl-4 list-decimal m-0">
@@ -187,3 +187,5 @@ export const SkillEvidenceGap: React.FC = () => {
   )
 }
 export default SkillEvidenceGap
+
+

@@ -35,7 +35,7 @@ export const DashboardLayout: React.FC<{ role?: UserRole }> = ({ role }) => {
         <button
           type="button"
           onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-          className="flex items-center gap-2 text-xs font-semibold text-[var(--navy)] p-1 rounded hover:bg-[#f1f3f5]"
+          className="flex items-center gap-2 text-xs font-semibold text-(--navy) p-1 rounded hover:bg-[#f1f3f5]"
           aria-expanded={mobileSidebarOpen}
         >
           {mobileSidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
@@ -75,3 +75,5 @@ export const DashboardLayout: React.FC<{ role?: UserRole }> = ({ role }) => {
   )
 }
 export default DashboardLayout
+
+

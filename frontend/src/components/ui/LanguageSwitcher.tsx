@@ -38,8 +38,8 @@ export const LanguageSwitcher: React.FC<{ className?: string }> = ({ className =
             aria-pressed={isSelected}
             className={`px-2.5 py-1 text-xs font-semibold rounded flex items-center gap-1 transition-colors cursor-pointer ${
               isSelected
-                ? 'bg-[var(--orange)] text-white shadow-xs font-bold'
-                : 'text-[#e2e8f0] hover:bg-[var(--navy)] hover:text-white'
+                ? 'bg-(--orange) text-white shadow-xs font-bold'
+                : 'text-[#e2e8f0] hover:bg-(--navy) hover:text-white'
             }`}
           >
             {isSelected && <Check className="w-3 h-3 shrink-0" aria-hidden="true" />}
@@ -50,3 +50,5 @@ export const LanguageSwitcher: React.FC<{ className?: string }> = ({ className =
     </div>
   )
 }
+
+

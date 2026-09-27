@@ -22,7 +22,7 @@ export const DistrictIntelligence: React.FC = () => {
   const columns: Column<DistrictMetric>[] = [
     {
       header: 'District Cluster',
-      accessor: (row) => <strong className="text-[var(--navy)]">{row.district}</strong>,
+      accessor: (row) => <strong className="text-(--navy)">{row.district}</strong>,
     },
     {
       header: 'Recruiter Demand',
@@ -64,13 +64,13 @@ export const DistrictIntelligence: React.FC = () => {
       />
 
       <div className="border-b border-[#d9dde1] pb-4">
-        <h1 className="text-2xl font-bold text-[var(--navy)] m-0">District Intelligence & Capacity Mapping</h1>
+        <h1 className="text-2xl font-bold text-(--navy) m-0">District Intelligence & Capacity Mapping</h1>
         <p className="text-sm text-[#5a6578] mt-1 mb-0">
           Comparing industry demand with certified vocational capacity across Maharashtra's key urban and industrial centers.
         </p>
       </div>
 
-      <div className="p-3 bg-[var(--orange-light)] border border-[#ffd5b8] rounded text-xs text-[var(--orange-dark)] flex items-center gap-2">
+      <div className="p-3 bg-(--orange-light) border border-[#ffd5b8] rounded text-xs text-(--orange-dark) flex items-center gap-2">
         <ShieldCheck className="w-4 h-4 shrink-0" />
         <span>Demonstration prototype figures. District numbers serve as illustrative modeling inputs for planning agencies.</span>
       </div>
@@ -116,3 +116,5 @@ export const DistrictIntelligence: React.FC = () => {
   )
 }
 export default DistrictIntelligence
+
+

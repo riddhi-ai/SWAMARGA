@@ -22,8 +22,8 @@ export const AuthLayout: React.FC = () => {
                 ;(e.target as HTMLElement).style.display = 'none'
               }}
             />
-            <span className="text-2xl font-black text-[var(--navy)]">
-              SWA<span className="text-[var(--orange)]">MARGA</span>
+            <span className="text-2xl font-black text-(--navy)">
+              SWA<span className="text-(--orange)">MARGA</span>
             </span>
           </Link>
           <p className="text-xs text-[#5a6578] mt-1 font-medium">{t('common.tagline')}</p>
@@ -41,3 +41,5 @@ export const AuthLayout: React.FC = () => {
   )
 }
 export default AuthLayout
+
+

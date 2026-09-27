@@ -262,3 +262,12 @@ input:focus, select:focus, textarea:focus {
 .animate-fade-in-up {
   animation: fadeInUp 0.4s ease-out forwards;
 }
+
+
+footer a {
+  color: #cbd5e0 !important;
+}
+
+footer a:hover {
+  color: #ffffff !important;
+}
